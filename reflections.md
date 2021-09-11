@@ -15,7 +15,7 @@ my first draft of my problem statement and MVP, and writing some user stories. I
 two activities this week.
 
 ### Week 2
-#### Week of 9/6: 6 hours
+#### Week of 9/6: 7 hours
 
 Tasks Accomplished:
 + Create indie project repository
