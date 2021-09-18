@@ -43,7 +43,6 @@
 + Begin recipe insert/convert tests
 
 ### Week 6
-
 + Sign up for AWS
 + Create EC2 instance
 + Deploy project to AWS
@@ -82,9 +81,11 @@
 + Assure javamail functionality
 + Add recipe search by tags
 + Add recipe search by ratings
++ Add pagination for recipe search results
 
 ### Week 13
 + Implement JavaBeans for recipe
++ Make edit party functionality 
 
 ### Week 14
 + Complete peer review

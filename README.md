@@ -33,7 +33,6 @@ new connections through your shared passion.
 
 ### Design
 + [User Stories](userStories.md)
-+ [Tasks](tasks.md)
 + [Screen Design](screenDesign.md)
 + [Application Flow](applicationFlow.md)
 + [Database Design](databaseDesign.md)
