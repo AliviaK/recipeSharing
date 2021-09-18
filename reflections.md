@@ -32,3 +32,19 @@ apps out there to get ideas of features I'd like and how to set my app apart fro
 ideas, but not positive yet on what I'd like to use or how the screen or database design will go. I signed up for 
 TogglTrack to keep a more accurate account of my time spent and will begin using it next week, because the time flies 
 much faster than I can keep track of on my own.
+
+### Week 3
+#### Week of 9/13: 4 hours
+
+Tasks Accomplished:
++ Add Log4J2 & JUnit to project
++ Finish User Stories/MVP documentation
++ Begin project plan mapping
++ Begin screen design
++ Begin user flow
+
+This week I spent several hours working to finish writing and sorting the user stories, and denoting which will be part
+of the project MVP. After completing the weekly work regarding JUnit and Log4J2 I added the dependencies for both into 
+the project pom.xml and added the log4j2.properties into the resources, and assured it was configured properly. I 
+continued working on the plan mapping and began playing around with screen design and user flow, which I plan to 
+complete early this coming week to complete my Checkpoint 1 requirements.
