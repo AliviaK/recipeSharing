@@ -34,7 +34,7 @@ TogglTrack to keep a more accurate account of my time spent and will begin using
 much faster than I can keep track of on my own.
 
 ### Week 3
-#### Week of 9/13: 4 hours
+#### Week of 9/13: 6.5 hours
 
 Tasks Accomplished:
 + Add Log4J2 & JUnit to project
@@ -47,4 +47,5 @@ This week I spent several hours working to finish writing and sorting the user s
 of the project MVP. After completing the weekly work regarding JUnit and Log4J2 I added the dependencies for both into 
 the project pom.xml and added the log4j2.properties into the resources, and assured it was configured properly. I 
 continued working on the plan mapping and began playing around with screen design and user flow, which I plan to 
-complete early this coming week to complete my Checkpoint 1 requirements.
+complete early this coming week to complete my Checkpoint 1 requirements. On Sunday I started working on the screen 
+design and completed a mockup of the homepage.
