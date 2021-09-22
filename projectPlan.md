@@ -40,11 +40,11 @@
 ### Week 5
 + Create Recipe class
 + Create recipe table in database (one user, many recipes)
++ Create party table
 + Begin recipe insert/convert tests
 
 ### Week 6
 + Sign up for AWS
-+ Create EC2 instance
 + Deploy project to AWS
 + Continue on recipe insert/convert methods
 
@@ -71,11 +71,12 @@
 + Complete partner assignment
 + Begin group API creation
 + Finish "Cooking Party" design
++ Make "Cooking Party" editable
 
 ### Week 11
 + Continue group API project
-+ Work on Bootstrap design of JSPs
-+ Create recipe review capabilities 
++ Work on Bootstrap or other css design of JSPs
++ Create recipe review/comment capabilities 
 
 ### Week 12
 + Assure javamail functionality
@@ -85,7 +86,7 @@
 
 ### Week 13
 + Implement JavaBeans for recipe
-+ Make edit party functionality 
++ Assure edit/send party functionalities 
 
 ### Week 14
 + Complete peer review
