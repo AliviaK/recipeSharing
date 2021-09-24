@@ -1,5 +1,3 @@
-# Coming Soon :)
-
 ## Current Ideas:
 ### User Table:
 - UserID(int autoincrement)* not null
@@ -9,10 +7,20 @@
 
 ### Recipe Table
 - RecipeID(int autoincrement)* not null
-- Ingredients(varchar) not null (Probably create separate RecipeIngredients table)
-- Directions(varchar) not null
 - UserID(int)! not null
+- RecipeName(varchar) not null
 - IsPublic(boolean) not null
+- Description(varchar)
+
+## RecipeIngredients Table
+- RecipeID(int)!* not null
+- IngredientName(varchar)* not null
+- Measurement(varchar) not null
+
+## RecipeSteps Table
+- RecipeID(int)!* not null
+- StepOrder(int)* not null
+- Direction(varchar) not null
 
 ### Party Table
 - PartyID(int autoincrement)* not null
