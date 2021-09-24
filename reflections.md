@@ -49,3 +49,25 @@ the project pom.xml and added the log4j2.properties into the resources, and assu
 continued working on the plan mapping and began playing around with screen design and user flow, which I plan to 
 complete early this coming week to complete my Checkpoint 1 requirements. On Sunday I started working on the screen 
 design and completed a mockup of the homepage.
+
+### Week 4
+#### Week of 9/20: 2.5 hours and counting
+
+Tasks Accomplished:
++ Create recipesAmongFriends database
++ Create User table and add fake data
++ Create UserDao
++ Configure Hibernate to User class & User table
++ Create SessionFactoryProvider
++ Get user info to show on basic user search jsp
+
+This week's first focus was to prepare for Checkpoint 1, which included finalizing my project plan, screen design, user
+stories, MVP, and application flow. With the feedback I received I plan to revise my MVP to make sure it isn't too 
+ambitious for the time I have left this semester, and select one big feature to focus on while marking some other
+planned features as additional goals I will add if time permits. I will also continue to work on the designs for the 
+other MVP screens before creating them, so I will be readjusting my project plan to reflect these changes. 
+After submitting my Checkpoint 1 documentation I began working on the Hibernate configuration and created a User class,
+a UserDao, a SessionFactoryProvider, and a hibernate.cfg.xml file. I then created the recipesAmongFriends database and 
+its first table, the User table. I annotated the User class to connect to the User table in the database, and borrowing
+the jsps and SearchUser class from the user search assignment I conducted a successful search of the fake data I plugged
+into my table, and confirmed that the dao is working properly.
