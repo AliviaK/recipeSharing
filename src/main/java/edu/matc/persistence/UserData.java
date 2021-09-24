@@ -78,7 +78,6 @@ public class UserData {
         user.setFirstName(results.getString("first_name"));
         user.setLastName(results.getString("last_name"));
         user.setUserName(results.getString("user_name"));
-        user.setDateOfBirth(results.getDate("date_of_birth").toLocalDate());
         user.setId(results.getInt("id"));
         return user;
     }

@@ -1,19 +1,33 @@
 package edu.matc.entity;
 
-import java.time.LocalDate;
-import java.time.Period;
+import org.hibernate.annotations.GenericGenerator;
+
+import javax.persistence.*;
 
 /**
  * A class to represent a user.
  *
  * @author pwaite
  */
+@Entity(name = "User")
+@Table(name = "user")
 public class User {
+    @Column(name = "first_name")
     private String firstName;
+
+    @Column(name = "last_name")
     private String lastName;
+
+    @Column(name = "user_name")
     private String userName;
-    private LocalDate dateOfBirth;
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO, generator = "native")
+    @GenericGenerator(name = "native",strategy = "native")
     private int id;
+
+    @Column(name = "email_address")
+    private String emailAddress;
 
 
     /**
@@ -27,16 +41,15 @@ public class User {
      *
      * @param firstName the first name
      * @param lastName  the last name
-     * @param userName  the user name
+     * @param userName  the username
      * @param id        the id
-     * @param dateOfBirth the date of birth
      */
-    public User(String firstName, String lastName, String userName, int id, LocalDate dateOfBirth) {
+    public User(String firstName, String lastName, String userName, int id, String emailAddress) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.userName = userName;
         this.id = id;
-        this.dateOfBirth = dateOfBirth;
+        this.emailAddress = emailAddress;
     }
 
 
@@ -77,18 +90,18 @@ public class User {
     }
 
     /**
-     * Gets user name.
+     * Gets username.
      *
-     * @return the user name
+     * @return the username
      */
     public String getUserName() {
         return userName;
     }
 
     /**
-     * Sets user name.
+     * Sets username.
      *
-     * @param userName the user name
+     * @param userName the username
      */
     public void setUserName(String userName) {
         this.userName = userName;
@@ -112,42 +125,29 @@ public class User {
         this.id = id;
     }
 
+    /**
+     * Gets email address.
+     *
+     * @return the email address
+     */
+    public String getEmailAddress() { return emailAddress; }
+
+    /**
+     * Sets email address.
+     *
+     * @param emailAddress the email address
+     */
+    public void setEmailAddress(String emailAddress) { this.emailAddress = emailAddress; }
+
     @Override
     public String toString() {
         return "User{" +
                 "firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
                 ", userName='" + userName + '\'' +
-                ", dateOfBirth=" + dateOfBirth +
                 ", id=" + id +
-                ", age=" + getAge() +
+                ", emailAddress" + emailAddress +
                 '}';
     }
 
-    /**
-     * Gets date of birth.
-     *
-     * @return the date of birth
-     */
-    public LocalDate getDateOfBirth() { return dateOfBirth; }
-
-    /**
-     * Sets date of birth.
-     *
-     * @param dateOfBirth the date of birth
-     */
-    public void setDateOfBirth(LocalDate dateOfBirth) { this.dateOfBirth = dateOfBirth; }
-
-    /**
-     * Calculate age int.
-     *
-     * @return the age of user
-     */
-    public int getAge() {
-        int age;
-        LocalDate today = LocalDate.now();
-        Period difference = Period.between(dateOfBirth, today);
-        age = difference.getYears();
-        return age;
-    }
 }

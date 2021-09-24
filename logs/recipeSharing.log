@@ -1,0 +1,1 @@
+[DEBUG] 2021-09-23 22:55:32.612 [http-nio-8080-exec-2] UserDao - The list of users [User{firstName='John', lastName='Doe', userName='jdtheguy', id=1, emailAddressjd@genericname.com}, User{firstName='Jenny', lastName='Doe', userName='jdthegal', id=2, emailAddressjd1@genericname.com}]
