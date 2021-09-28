@@ -73,4 +73,10 @@ a UserDao, a SessionFactoryProvider, and a hibernate.cfg.xml file. I then create
 its first table, the User table. I annotated the User class to connect to the User table in the database, and borrowing
 the jsps and SearchUser class from the user search assignment I conducted a successful search of the fake data I plugged
 into my table, and confirmed that the dao is working properly. I finished the week with creating a test database so that
-I was no longer messing with the data in my regular schema. I achieved full CRUD coverage.
+I was no longer messing with the data in my regular schema. I achieved full CRUD coverage for User.
+
+### Week 5
+#### Week of 9/27: 
+
+Tasks Accomplished:
++ Change Log4J2 output location
