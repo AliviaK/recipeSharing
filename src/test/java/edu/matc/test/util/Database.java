@@ -1,9 +1,10 @@
-package edu.matc.persistence;
+package edu.matc.test.util;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import java.io.BufferedReader;
+import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -19,7 +20,7 @@ import java.util.Properties;
  * @author Alex M - Fall 2019 - added multi-line sql capability
  */
 
-public class Database implements PropertiesLoader {
+public class Database {
     private final Logger logger = LogManager.getLogger(this.getClass());
 
     // create an object of the class Database
@@ -40,7 +41,7 @@ public class Database implements PropertiesLoader {
     private void loadProperties() {
         properties = new Properties();
         try {
-            properties = this.loadProperties("/database.properties");
+            properties.load(this.getClass().getResourceAsStream("/database.properties"));
         } catch (Exception e) {
             logger.error("Database.loadProperties()..." + e);
         }
@@ -100,24 +101,27 @@ public class Database implements PropertiesLoader {
 
         Statement stmt = null;
         ClassLoader classloader = Thread.currentThread().getContextClassLoader();
-        try (BufferedReader br = new BufferedReader(new InputStreamReader(classloader.getResourceAsStream(sqlFile))))  {
+        InputStream inputStream = classloader.getResourceAsStream(sqlFile);
+        try (BufferedReader br = new BufferedReader(new InputStreamReader(inputStream)))  {
 
+            Class.forName("com.mysql.jdbc.Driver");
             connect();
             stmt = connection.createStatement();
 
             String sql = "";
             while (br.ready())
             {
-                char inputValue = (char)br.read();
-
+                char inputValue = (char) br.read();
                 if(inputValue == ';')
                 {
                     stmt.executeUpdate(sql);
                     sql = "";
                 }
-                else
+                else {
                     sql += inputValue;
+                }
             }
+
 
         } catch (SQLException se) {
             logger.error("SQL Exception" + se);

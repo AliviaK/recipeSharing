@@ -42,13 +42,11 @@ public class User {
      * @param firstName the first name
      * @param lastName  the last name
      * @param userName  the username
-     * @param id        the id
      */
-    public User(String firstName, String lastName, String userName, int id, String emailAddress) {
+    public User(String firstName, String lastName, String userName, String emailAddress) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.userName = userName;
-        this.id = id;
         this.emailAddress = emailAddress;
     }
 
