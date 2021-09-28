@@ -51,7 +51,7 @@ complete early this coming week to complete my Checkpoint 1 requirements. On Sun
 design and completed a mockup of the homepage.
 
 ### Week 4
-#### Week of 9/20: 2.5 hours and counting
+#### Week of 9/20: 6 hrs
 
 Tasks Accomplished:
 + Create recipesAmongFriends database
@@ -60,6 +60,8 @@ Tasks Accomplished:
 + Configure Hibernate to User class & User table
 + Create SessionFactoryProvider
 + Get user info to show on basic user search jsp
++ Achieve full CRUD coverage with DAO
++ Set up test database schema
 
 This week's first focus was to prepare for Checkpoint 1, which included finalizing my project plan, screen design, user
 stories, MVP, and application flow. With the feedback I received I plan to revise my MVP to make sure it isn't too 
@@ -70,4 +72,5 @@ After submitting my Checkpoint 1 documentation I began working on the Hibernate 
 a UserDao, a SessionFactoryProvider, and a hibernate.cfg.xml file. I then created the recipesAmongFriends database and 
 its first table, the User table. I annotated the User class to connect to the User table in the database, and borrowing
 the jsps and SearchUser class from the user search assignment I conducted a successful search of the fake data I plugged
-into my table, and confirmed that the dao is working properly.
+into my table, and confirmed that the dao is working properly. I finished the week with creating a test database so that
+I was no longer messing with the data in my regular schema. I achieved full CRUD coverage.
