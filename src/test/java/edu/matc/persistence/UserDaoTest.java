@@ -1,5 +1,6 @@
 package edu.matc.persistence;
 
+import edu.matc.entity.Recipe;
 import edu.matc.entity.User;
 import edu.matc.test.util.Database;
 import org.junit.jupiter.api.BeforeEach;
@@ -61,6 +62,21 @@ class UserDaoTest {
     @Test
     void insertSuccess() {
         User userToAdd = new User("Pierce", "Hawthorne","phawthore", "phawthorne@greendalecollege.edu");
+        int id = dao.insert(userToAdd);
+        assertNotEquals(0, id);
+        User insertedUser = dao.getById(id);
+        assertEquals("Pierce", insertedUser.getFirstName());
+    }
+
+    @Test
+    void insertWithRecipeSuccess() {
+        User userToAdd = new User("Pierce", "Hawthorne","phawthore", "phawthorne@greendalecollege.edu");
+
+        String recipeName = "Chocolate chip cookies";
+        String recipeNote = "Delicious";
+        Boolean isPublic = true;
+        Recipe recipe = new Recipe(recipeName, recipeNote, isPublic, userToAdd);
+
         int id = dao.insert(userToAdd);
         assertNotEquals(0, id);
         User insertedUser = dao.getById(id);

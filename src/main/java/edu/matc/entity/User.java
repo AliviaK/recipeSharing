@@ -3,6 +3,8 @@ package edu.matc.entity;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
+import java.util.HashSet;
+import java.util.Set;
 
 /**
  * A class to represent a user.
@@ -29,7 +31,8 @@ public class User {
     @Column(name = "email_address")
     private String emailAddress;
 
-
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
+    private Set<Recipe> recipes = new HashSet<>();
     /**
      * Instantiates a new User.
      */
@@ -136,6 +139,14 @@ public class User {
      * @param emailAddress the email address
      */
     public void setEmailAddress(String emailAddress) { this.emailAddress = emailAddress; }
+
+    public Set<Recipe> getRecipes() {
+        return recipes;
+    }
+
+    public void setRecipes(Set<Recipe> recipes) {
+        this.recipes = recipes;
+    }
 
     @Override
     public String toString() {
