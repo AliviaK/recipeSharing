@@ -37,7 +37,7 @@ public class Recipe {
      *
      * @param name     the name
      * @param notes    the notes
-     * @param isPublic the is public
+     * @param isPublic the is public status
      * @param user     the user
      */
     public Recipe(String name, String notes, boolean isPublic, User user) {
