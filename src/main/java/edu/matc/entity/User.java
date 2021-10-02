@@ -33,6 +33,7 @@ public class User {
 
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
     private Set<Recipe> recipes = new HashSet<>();
+
     /**
      * Instantiates a new User.
      */
@@ -42,9 +43,10 @@ public class User {
     /**
      * Instantiates a new User.
      *
-     * @param firstName the first name
-     * @param lastName  the last name
-     * @param userName  the username
+     * @param firstName    the first name
+     * @param lastName     the last name
+     * @param userName     the username
+     * @param emailAddress the email address
      */
     public User(String firstName, String lastName, String userName, String emailAddress) {
         this.firstName = firstName;
@@ -140,12 +142,37 @@ public class User {
      */
     public void setEmailAddress(String emailAddress) { this.emailAddress = emailAddress; }
 
+    /**
+     * Gets recipes.
+     *
+     * @return the recipes
+     */
     public Set<Recipe> getRecipes() {
         return recipes;
     }
 
+    /**
+     * Sets recipes.
+     *
+     * @param recipes the recipes
+     */
     public void setRecipes(Set<Recipe> recipes) {
         this.recipes = recipes;
+    }
+
+    /**
+     * Add recipe.
+     *
+     * @param recipe the recipe
+     */
+    public void addRecipe(Recipe recipe) {
+        recipes.add(recipe);
+        recipe.setUser(this);
+    }
+
+    public void removeRecipe(Recipe recipe) {
+        recipes.remove(recipe);
+        recipe.setUser(null);
     }
 
     @Override
@@ -158,5 +185,4 @@ public class User {
                 ", emailAddress" + emailAddress +
                 '}';
     }
-
 }

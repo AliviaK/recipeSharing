@@ -70,17 +70,19 @@ class UserDaoTest {
 
     @Test
     void insertWithRecipeSuccess() {
-        User userToAdd = new User("Pierce", "Hawthorne","phawthore", "phawthorne@greendalecollege.edu");
+        User userToAdd = new User("Craig", "Pelton","cpelton", "cpelton@greendalecollege.edu");
 
         String recipeName = "Chocolate chip cookies";
         String recipeNote = "Delicious";
-        Boolean isPublic = true;
-        Recipe recipe = new Recipe(recipeName, recipeNote, isPublic, userToAdd);
+        Recipe recipe = new Recipe(recipeName, recipeNote, true, userToAdd);
+
+        userToAdd.addRecipe(recipe);
 
         int id = dao.insert(userToAdd);
+
         assertNotEquals(0, id);
         User insertedUser = dao.getById(id);
-        assertEquals("Pierce", insertedUser.getFirstName());
+        assertEquals(1, insertedUser.getRecipes().size());
     }
 
     @Test
