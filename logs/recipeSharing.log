@@ -249,3 +249,10 @@
 [DEBUG] 2021-10-02 11:11:26.918 [http-nio-8080-exec-2] UserDao - Searching for user with lastName = b
 [DEBUG] 2021-10-02 11:11:27.211 [http-nio-8080-exec-2] SearchUser - null
 [DEBUG] 2021-10-02 11:11:30.919 [http-nio-8080-exec-3] UserDao - Searching for user with firstName = b
+[DEBUG] 2021-10-02 16:49:15.383 [main] GenericDao - Searching for Recipe with name = br
+[DEBUG] 2021-10-02 16:52:49.037 [main] GenericDao - Searching for Recipe with name = br
+[DEBUG] 2021-10-02 16:55:54.947 [main] GenericDao - Searching for User with lastName = ben
+[DEBUG] 2021-10-02 16:56:38.468 [main] GenericDao - Searching for User with lastName = ben
+[DEBUG] 2021-10-02 16:56:59.042 [main] GenericDao - Searching for Recipe with name = br
+[DEBUG] 2021-10-02 16:59:18.347 [main] GenericDao - Searching for Recipe with name = br
+[DEBUG] 2021-10-02 16:59:18.741 [main] GenericDao - Searching for User with lastName = ben

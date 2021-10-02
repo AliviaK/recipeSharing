@@ -1,6 +1,7 @@
 package edu.matc.controller;
 
-import edu.matc.persistence.UserDao;
+import edu.matc.entity.User;
+import edu.matc.persistence.GenericDao;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -26,12 +27,12 @@ public class SearchUser extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        UserDao userDao = new UserDao();
+        GenericDao userDao = new GenericDao(User.class);
         if (req.getParameter("submit").equals("searchLast")) {
-            req.setAttribute("users", userDao.getByPropertyLike("lastName", req.getParameter("searchTerm")));
+            req.setAttribute("users", userDao.getByPropertyLike("lastName", req.getParameter("searchTerm"), "User"));
             logger.debug(req.getParameter("lastName"));
         } else if (req.getParameter("submit").equals("searchFirst")) {
-            req.setAttribute("users", userDao.getByPropertyLike("firstName", req.getParameter("searchTerm")));
+            req.setAttribute("users", userDao.getByPropertyLike("firstName", req.getParameter("searchTerm"), "User"));
         } else {
             req.setAttribute("users", userDao.getAll());
         }
