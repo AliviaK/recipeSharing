@@ -11,14 +11,15 @@ import java.util.List;
 import static org.junit.jupiter.api.Assertions.*;
 
 class RecipeDaoTest {
-    RecipeDao dao;
+
+    GenericDao genericDao;
 
     @BeforeEach
     void setUp() {
         Database database = Database.getInstance();
         database.runSQL("cleandb.sql");
 
-        dao = new RecipeDao();
+        genericDao = new GenericDao(Recipe.class);
     }
 
     /**
@@ -26,7 +27,7 @@ class RecipeDaoTest {
      */
     @Test
     void getByIdSuccess() {
-        Recipe retrievedRecipe = dao.getById(3);
+        Recipe retrievedRecipe = (Recipe) genericDao.getById(3);
         assertNotNull(retrievedRecipe);
         assertEquals("Flaky almond dessert croissant", retrievedRecipe.getNotes());
     }
@@ -36,7 +37,7 @@ class RecipeDaoTest {
      */
     @Test
     void getAllSuccess() {
-        List<Recipe> recipes = dao.getAll();
+        List<Recipe> recipes = genericDao.getAll();
         assertEquals(3, recipes.size());
     }
 
@@ -45,31 +46,31 @@ class RecipeDaoTest {
      */
     @Test
     void getByPropertyLikeSuccess() {
-        List<Recipe> recipes = dao.getByPropertyLike("name", "br");
+        List<Recipe> recipes = genericDao.getByPropertyLike("name", "br", "Recipe");
         assertEquals(1, recipes.size());
     }
 
     @Test
     void saveOrUpdateSuccess() {
         String newName = "Cake";
-        Recipe recipeToUpdate = dao.getById(2);
+        Recipe recipeToUpdate = (Recipe) genericDao.getById(2);
         recipeToUpdate.setName(newName);
-        dao.saveOrUpdate(recipeToUpdate);
-        Recipe retrievedRecipe = dao.getById(2);
+        genericDao.saveOrUpdate(recipeToUpdate);
+        Recipe retrievedRecipe = (Recipe) genericDao.getById(2);
         assertEquals(newName, retrievedRecipe.getName());
     }
 
     @Test
     void insertSuccess() {
-        UserDao userDao = new UserDao();
-        User user = userDao.getById(5);
+        GenericDao userDao = new GenericDao(User.class);
+        User user = (User) userDao.getById(5);
 
         Recipe recipeToAdd = new Recipe("Brownies", "Delicious fudge brownies", true, user);
         user.addRecipe(recipeToAdd);
 
-        int id = dao.insert(recipeToAdd);
+        int id = genericDao.insert(recipeToAdd);
         assertNotEquals(0, id);
-        Recipe insertedRecipe = dao.getById(id);
+        Recipe insertedRecipe = (Recipe) genericDao.getById(id);
         assertEquals("Brownies", insertedRecipe.getName());
         assertNotNull(insertedRecipe.getUser());
         assertEquals("Shirley", insertedRecipe.getUser().getFirstName());
@@ -77,7 +78,7 @@ class RecipeDaoTest {
 
     @Test
     void deleteSuccess() {
-        dao.delete(dao.getById(1));
-        assertNull(dao.getById(1));
+        genericDao.delete(genericDao.getById(1));
+        assertNull(genericDao.getById(1));
     }
 }
