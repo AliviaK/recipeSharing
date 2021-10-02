@@ -12,6 +12,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class RecipeDaoTest {
     RecipeDao dao;
+    GenericDao genericDao;
 
     @BeforeEach
     void setUp() {
@@ -19,6 +20,7 @@ class RecipeDaoTest {
         database.runSQL("cleandb.sql");
 
         dao = new RecipeDao();
+        genericDao = new GenericDao(Recipe.class);
     }
 
     /**
@@ -26,7 +28,7 @@ class RecipeDaoTest {
      */
     @Test
     void getByIdSuccess() {
-        Recipe retrievedRecipe = dao.getById(3);
+        Recipe retrievedRecipe = (Recipe) genericDao.getById(3);
         assertNotNull(retrievedRecipe);
         assertEquals("Flaky almond dessert croissant", retrievedRecipe.getNotes());
     }
