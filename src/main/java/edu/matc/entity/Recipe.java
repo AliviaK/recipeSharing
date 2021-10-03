@@ -3,6 +3,9 @@ package edu.matc.entity;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
+import java.util.HashSet;
+import java.util.Objects;
+import java.util.Set;
 
 /**
  * The type Recipe.
@@ -25,6 +28,8 @@ public class Recipe {
 
     @Column(name = "is_public")
     private boolean isPublic;
+
+
 
     /**
      * Instantiates a new Recipe.
@@ -135,6 +140,20 @@ public class Recipe {
      */
     public void setPublic(boolean aPublic) {
         isPublic = aPublic;
+    }
+
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Recipe recipe = (Recipe) o;
+        return id == recipe.id && isPublic == recipe.isPublic && Objects.equals(user, recipe.user) && Objects.equals(name, recipe.name) && Objects.equals(notes, recipe.notes);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, user, name, notes, isPublic);
     }
 
     @Override

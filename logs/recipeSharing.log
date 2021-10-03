@@ -207,3 +207,9 @@
 [DEBUG] 2021-10-01 23:51:00.278 [main] UserDao - Searching for user with lastName = ben
 [DEBUG] 2021-10-01 23:51:37.763 [main] RecipeDao - The list of recipes [Recipe{id=1, user='User{firstName='Shirley', lastName='Bennett', userName='sbennett', id=5, emailAddresssbennett@greendale.edu}', name='Brownies', notes='Delicious and chocolatey', isPublic=true}, Recipe{id=2, user='User{firstName='Shirley', lastName='Bennett', userName='sbennett', id=5, emailAddresssbennett@greendale.edu}', name='Mini Pie', notes='Single serving pie that works with your favorite fruit filling', isPublic=true}, Recipe{id=3, user='User{firstName='Britta', lastName='Perry', userName='bperry', id=2, emailAddressbperry@greendale.edu}', name='Bear Claws', notes='Flaky almond dessert croissant', isPublic=true}]
 [DEBUG] 2021-10-01 23:51:44.767 [main] RecipeDao - Searching for recipe with name = br
+[DEBUG] 2021-10-02 19:58:57.023 [main] GenericDao - Searching for Recipe with name = br
+[DEBUG] 2021-10-02 19:59:12.474 [main] GenericDao - Searching for User with lastName = ben
+[DEBUG] 2021-10-02 19:59:44.365 [main] GenericDao - Searching for Recipe with name = br
+[DEBUG] 2021-10-02 20:00:29.293 [main] GenericDao - Searching for Recipe with name = br
+[DEBUG] 2021-10-02 20:01:59.624 [main] GenericDao - Searching for Recipe with name = br
+[DEBUG] 2021-10-02 20:02:16.028 [main] GenericDao - Searching for User with lastName = ben
