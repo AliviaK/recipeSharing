@@ -29,7 +29,26 @@ public class Recipe {
     @Column(name = "is_public")
     private boolean isPublic;
 
+    @OneToMany(mappedBy = "recipe", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
+    private Set<RecipeIngredient> recipeIngredients = new HashSet<>();
 
+    /**
+     * Gets recipe ingredients.
+     *
+     * @return the recipe ingredients
+     */
+    public Set<RecipeIngredient> getRecipeIngredients() {
+        return recipeIngredients;
+    }
+
+    /**
+     * Sets recipe ingredients.
+     *
+     * @param recipeIngredients the recipe ingredients
+     */
+    public void setRecipeIngredients(Set<RecipeIngredient> recipeIngredients) {
+        this.recipeIngredients = recipeIngredients;
+    }
 
     /**
      * Instantiates a new Recipe.
@@ -140,6 +159,21 @@ public class Recipe {
      */
     public void setPublic(boolean aPublic) {
         isPublic = aPublic;
+    }
+
+    /**
+     * Add recipe.
+     *
+     * @param recipeIngredient the recipe
+     */
+    public void addRecipeIngredient(RecipeIngredient recipeIngredient) {
+        recipeIngredients.add(recipeIngredient);
+        recipeIngredient.setRecipe(this);
+    }
+
+    public void removeRecipeIngredient(RecipeIngredient recipeIngredient) {
+        recipeIngredients.remove(recipeIngredient);
+        recipeIngredient.setRecipe(null);
     }
 
 
