@@ -89,4 +89,5 @@ This week I created the Recipe class to coincide with the Recipe table and got t
 working between Recipe and User. I also created the RecipeIngredient table and the one-to-many between it and Recipe.
 I created passing unit tests for all three of these classes, and converted to a GenericDao. I created all tables
 I will be needing for this project in both the production and test databases, and will be adding the classes and unit 
-tests for the rest of these tables in the coming week. 
+tests for the rest of these tables in the coming week. I practiced making my first branch for the generic dao and merged
+it with the main on gitHub.
