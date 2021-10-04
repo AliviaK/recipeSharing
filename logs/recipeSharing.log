@@ -241,3 +241,6 @@
 [DEBUG] 2021-10-02 23:39:07.161 [main] GenericDao - Searching for Recipe with name = br
 [DEBUG] 2021-10-02 23:39:07.675 [main] GenericDao - Searching for RecipeIngredient with amount = 1
 [DEBUG] 2021-10-02 23:39:08.459 [main] GenericDao - Searching for User with lastName = ben
+[DEBUG] 2021-10-03 23:37:11.878 [main] GenericDao - Searching for Recipe with name = br
+[DEBUG] 2021-10-03 23:37:12.377 [main] GenericDao - Searching for RecipeIngredient with amount = 1
+[DEBUG] 2021-10-03 23:37:12.874 [main] GenericDao - Searching for User with lastName = ben

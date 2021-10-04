@@ -76,7 +76,17 @@ into my table, and confirmed that the dao is working properly. I finished the we
 I was no longer messing with the data in my regular schema. I achieved full CRUD coverage for User.
 
 ### Week 5
-#### Week of 9/27: 
+#### Week of 9/27: 6 hours
 
 Tasks Accomplished:
 + Change Log4J2 output location
++ Create all tables in database and test database
++ Create Recipe and RecipeIngredient classes
++ Create passing tests for User, Recipe, and Recipe Ingredient
++ Create GenericDao
+
+This week I created the Recipe class to coincide with the Recipe table and got the one-to-many hibernate relationship
+working between Recipe and User. I also created the RecipeIngredient table and the one-to-many between it and Recipe.
+I created passing unit tests for all three of these classes, and converted to a GenericDao. I created all tables
+I will be needing for this project in both the production and test databases, and will be adding the classes and unit 
+tests for the rest of these tables in the coming week. 

@@ -3,6 +3,7 @@ package edu.matc.entity;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
+import java.util.Objects;
 
 /**
  * The type Recipe ingredient.
@@ -121,5 +122,18 @@ public class RecipeIngredient {
                 ", ingredient='" + ingredient + '\'' +
                 ", amount='" + amount + '\'' +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        RecipeIngredient that = (RecipeIngredient) o;
+        return id == that.id && Objects.equals(ingredient, that.ingredient) && Objects.equals(amount, that.amount);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, ingredient, amount);
     }
 }
