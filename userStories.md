@@ -17,10 +17,10 @@ dishes.
 + As a user, I want to be able to edit my uploaded recipes so I can modify them at a later time. *
 
 ## Scale Recipes
-+ As a parent, I want recipe scaling options so I can have a larger yield to feed the whole family. *
-+ As a user, I want to convert recipes by volume so I can create them without needing to buy a scale. *
++ As a parent, I want recipe scaling options so I can have a larger yield to feed the whole family. 
++ As a user, I want to convert recipes by volume so I can create them without needing to buy a scale. 
 + As a user, I want to convert recipes by weight so I can be precise in my measurements without digging out various cups
-  and spoons. *
+  and spoons.
 
 ## Browse Recipes
 + As a casual user, I want to be able to browse without a membership so I can use the site quickly without having to log
@@ -41,7 +41,7 @@ dishes.
 
 ## Review Recipes
 + As a user, I want to write a review of my friend's recipe so I can share my opinions. *
-+ As a user, I want to upload a photo of my finished recipe so I can show my final product. *
++ As a user, I want to upload a photo of my finished recipe so I can show my final product. 
 + As a user, I want to edit my review so it can more accurately reflect my opinion. *
 + As a user, I want to delete my review so I can keep my opinion private if I change my mind. *
 + As a user, I want to write review of public recipes so I can share my opinion on recipes I find.

@@ -32,23 +32,9 @@ public class Recipe {
     @OneToMany(mappedBy = "recipe", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
     private Set<RecipeIngredient> recipeIngredients = new HashSet<>();
 
-    /**
-     * Gets recipe ingredients.
-     *
-     * @return the recipe ingredients
-     */
-    public Set<RecipeIngredient> getRecipeIngredients() {
-        return recipeIngredients;
-    }
+    @OneToMany(mappedBy = "recipe", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
+    private Set<RecipeStep> recipeSteps = new HashSet<>();
 
-    /**
-     * Sets recipe ingredients.
-     *
-     * @param recipeIngredients the recipe ingredients
-     */
-    public void setRecipeIngredients(Set<RecipeIngredient> recipeIngredients) {
-        this.recipeIngredients = recipeIngredients;
-    }
 
     /**
      * Instantiates a new Recipe.
@@ -162,7 +148,43 @@ public class Recipe {
     }
 
     /**
-     * Add recipe.
+     * Gets recipe ingredients.
+     *
+     * @return the recipe ingredients
+     */
+    public Set<RecipeIngredient> getRecipeIngredients() {
+        return recipeIngredients;
+    }
+
+    /**
+     * Sets recipe ingredients.
+     *
+     * @param recipeIngredients the recipe ingredients
+     */
+    public void setRecipeIngredients(Set<RecipeIngredient> recipeIngredients) {
+        this.recipeIngredients = recipeIngredients;
+    }
+
+    /**
+     * Gets recipe steps.
+     *
+     * @return the recipe steps
+     */
+    public Set<RecipeStep> getRecipeSteps() {
+        return recipeSteps;
+    }
+
+    /**
+     * Sets recipe steps.
+     *
+     * @param recipeSteps the recipe steps
+     */
+    public void setRecipeSteps(Set<RecipeStep> recipeSteps) {
+        this.recipeSteps = recipeSteps;
+    }
+
+    /**
+     * Add recipe ingredient.
      *
      * @param recipeIngredient the recipe
      */
@@ -171,9 +193,34 @@ public class Recipe {
         recipeIngredient.setRecipe(this);
     }
 
+    /**
+     * Remove recipe ingredient.
+     *
+     * @param recipeIngredient the recipe ingredient
+     */
     public void removeRecipeIngredient(RecipeIngredient recipeIngredient) {
         recipeIngredients.remove(recipeIngredient);
         recipeIngredient.setRecipe(null);
+    }
+
+    /**
+     * Add recipe step.
+     *
+     * @param recipeStep the recipe step
+     */
+    public void addRecipeStep(RecipeStep recipeStep) {
+        recipeSteps.add(recipeStep);
+        recipeStep.setRecipe(this);
+    }
+
+    /**
+     * Remove recipe step.
+     *
+     * @param recipeStep the recipe step
+     */
+    public void removeRecipeStep(RecipeStep recipeStep) {
+        recipeSteps.remove(recipeStep);
+        recipeStep.setRecipe(null);
     }
 
 

@@ -244,3 +244,40 @@
 [DEBUG] 2021-10-03 23:37:11.878 [main] GenericDao - Searching for Recipe with name = br
 [DEBUG] 2021-10-03 23:37:12.377 [main] GenericDao - Searching for RecipeIngredient with amount = 1
 [DEBUG] 2021-10-03 23:37:12.874 [main] GenericDao - Searching for User with lastName = ben
+[DEBUG] 2021-10-05 13:28:19.264 [main] GenericDao - Searching for Recipe with name = br
+[DEBUG] 2021-10-05 13:28:19.779 [main] GenericDao - Searching for RecipeIngredient with amount = 1
+[DEBUG] 2021-10-05 13:28:20.284 [main] GenericDao - Searching for User with lastName = ben
+[DEBUG] 2021-10-05 14:17:39.645 [main] GenericDao - Searching for Recipe with name = br
+[DEBUG] 2021-10-05 14:17:40.177 [main] GenericDao - Searching for RecipeIngredient with amount = 1
+[DEBUG] 2021-10-05 14:17:40.681 [main] GenericDao - Searching for User with lastName = ben
+[DEBUG] 2021-10-05 14:39:47.633 [main] GenericDao - Searching for Recipe with name = br
+[DEBUG] 2021-10-05 14:39:48.350 [main] GenericDao - Searching for RecipeIngredient with amount = 1
+[DEBUG] 2021-10-05 14:39:48.864 [main] GenericDao - Searching for User with lastName = ben
+[DEBUG] 2021-10-05 14:55:39.389 [main] GenericDao - Searching for Recipe with name = br
+[DEBUG] 2021-10-05 14:55:40.083 [main] GenericDao - Searching for RecipeIngredient with amount = 1
+[DEBUG] 2021-10-05 14:55:40.611 [main] GenericDao - Searching for User with lastName = ben
+[DEBUG] 2021-10-05 15:02:39.228 [main] GenericDao - Searching for Recipe with name = br
+[DEBUG] 2021-10-05 15:02:39.729 [main] GenericDao - Searching for RecipeIngredient with amount = 1
+[DEBUG] 2021-10-05 15:02:40.544 [main] GenericDao - Searching for User with lastName = ben
+[DEBUG] 2021-10-05 15:06:44.611 [main] GenericDao - Searching for Recipe with name = br
+[DEBUG] 2021-10-05 15:06:45.294 [main] GenericDao - Searching for RecipeIngredient with amount = 1
+[DEBUG] 2021-10-05 15:06:45.775 [main] GenericDao - Searching for User with lastName = ben
+[DEBUG] 2021-10-05 16:42:27.892 [main] GenericDao - Searching for Recipe with name = br
+[DEBUG] 2021-10-05 16:42:28.508 [main] GenericDao - Searching for RecipeIngredient with amount = 1
+[DEBUG] 2021-10-05 16:42:29.109 [main] GenericDao - Searching for User with lastName = ben
+[DEBUG] 2021-10-05 16:44:13.498 [main] GenericDao - Searching for Recipe with name = br
+[DEBUG] 2021-10-05 16:44:14.071 [main] GenericDao - Searching for RecipeIngredient with amount = 1
+[DEBUG] 2021-10-05 16:44:14.890 [main] GenericDao - Searching for User with lastName = ben
+[DEBUG] 2021-10-05 16:48:26.916 [main] GenericDao - Searching for Recipe with name = br
+[DEBUG] 2021-10-05 16:48:27.460 [main] GenericDao - Searching for RecipeIngredient with amount = 1
+[DEBUG] 2021-10-05 16:48:28.044 [main] GenericDao - Searching for User with lastName = ben
+[ERROR] 2021-10-09 09:16:09.953 [main] Database - SQL Exceptionjava.sql.SQLException: Incorrect integer value: 'Mix flour, cinnamon, and cocoa powder in large bowl' for column 'order' at row 1
+[ERROR] 2021-10-09 09:16:11.776 [main] Database - SQL Exceptionjava.sql.SQLException: Incorrect integer value: 'Mix flour, cinnamon, and cocoa powder in large bowl' for column 'order' at row 1
+[ERROR] 2021-10-09 09:16:11.854 [main] Database - SQL Exceptionjava.sql.SQLException: Incorrect integer value: 'Mix flour, cinnamon, and cocoa powder in large bowl' for column 'order' at row 1
+[ERROR] 2021-10-09 09:16:12.068 [main] Database - SQL Exceptionjava.sql.SQLException: Incorrect integer value: 'Mix flour, cinnamon, and cocoa powder in large bowl' for column 'order' at row 1
+[DEBUG] 2021-10-09 09:16:12.069 [main] GenericDao - Searching for RecipeStep with amount = 1
+[ERROR] 2021-10-09 09:16:12.151 [main] Database - SQL Exceptionjava.sql.SQLException: Incorrect integer value: 'Mix flour, cinnamon, and cocoa powder in large bowl' for column 'order' at row 1
+[ERROR] 2021-10-09 09:16:12.245 [main] Database - SQL Exceptionjava.sql.SQLException: Incorrect integer value: 'Mix flour, cinnamon, and cocoa powder in large bowl' for column 'order' at row 1
+[DEBUG] 2021-10-09 09:22:17.758 [main] GenericDao - Searching for RecipeStep with amount = 1
+[DEBUG] 2021-10-09 09:24:06.113 [main] GenericDao - Searching for RecipeStep with direction = mix
+[DEBUG] 2021-10-09 09:24:31.442 [main] GenericDao - Searching for RecipeStep with direction = mix

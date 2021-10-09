@@ -12,12 +12,12 @@ em## Current Ideas:
 - IsPublic(boolean) not null
 - Description(varchar)
 
-## RecipeIngredients Table
+## RecipeIngredient Table
 - RecipeID(int)!* not null
 - IngredientName(varchar)* not null
 - Measurement(varchar) not null
 
-## RecipeSteps Table
+## RecipeStep Table
 - RecipeID(int)!* not null
 - StepOrder(int)* not null
 - Direction(varchar) not null
@@ -29,7 +29,7 @@ em## Current Ideas:
 - Date (DateTime) not null
 - Details (varchar) null
 
-### PartyUsers Table
+### PartyUser Table
 - PartyID(int)*! not null
 - UserID(int)*! not null
 

@@ -1,3 +1,4 @@
+DELETE FROM recipe_step;
 DELETE FROM recipe_ingredient;
 DELETE FROM recipe;
 DELETE FROM user;
@@ -13,3 +14,8 @@ INSERT INTO recipe VALUES (1, 5, 'Brownies', 'Delicious and chocolatey', true),
 INSERT INTO recipe_ingredient VALUES (1, 1, 'Chocolate Chips', '1/2 cup'),
                                     (2, 1, 'Baking Powder', '1 tsp'),
                                     (3, 2, 'Coconut Oil', '1/2 cup');
+INSERT INTO recipe_step VALUES (1, 1, 'Mix flour, cinnamon, and cocoa powder in large bowl', 1),
+                                     (2, 2, 'Combine eggs and sugar in medium bowl', 1),
+                                     (3, 3, 'Add wet ingredients to dry', 1),
+                                     (4, 1, 'Place crust in pie pan', 2),
+                                     (5, 2, 'Add canned cherries to crust', 2);

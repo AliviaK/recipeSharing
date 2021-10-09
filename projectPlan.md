@@ -10,16 +10,12 @@
 + Edit Party details (Time, Recipe, Description, etc.)
 + Cancel Party
 + Upload recipe
-+ Tag recipe by ingredient/dietary need
 + Delete recipe
 + Share recipe
 + Review recipe
 + Rate recipe
 + Comment on recipe
-+ Upload photo
-+ Delete photo
-+ Scale recipe
-+ Convert recipe to volume/weight
+
 
 
 ## Weekly Goals
@@ -59,7 +55,6 @@
 + Add javamail API to project
 + Create javamail POJO 
 + Begin "Cooking Party" design
-+ Implement Amazon Rekognition
 
 ### Week 9
 + Create JSPs for all DAOs

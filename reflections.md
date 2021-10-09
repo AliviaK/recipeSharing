@@ -91,3 +91,11 @@ I created passing unit tests for all three of these classes, and converted to a 
 I will be needing for this project in both the production and test databases, and will be adding the classes and unit 
 tests for the rest of these tables in the coming week. I practiced making my first branch for the generic dao and merged
 it with the main on gitHub.
+
+### Week 6
+#### Week of 10/4: 2 hours
+
+Tasks Accomplished:
++ Sign up for AWS
++ Create first environment in Amazon Beanstalk
++ Deploy project
