@@ -35,6 +35,9 @@ public class Recipe {
     @OneToMany(mappedBy = "recipe", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
     private Set<RecipeStep> recipeSteps = new HashSet<>();
 
+    @OneToMany(mappedBy = "recipe", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
+    private Set<Party> parties = new HashSet<>();
+
 
     /**
      * Instantiates a new Recipe.
@@ -184,6 +187,24 @@ public class Recipe {
     }
 
     /**
+     * Gets parties.
+     *
+     * @return the parties
+     */
+    public Set<Party> getParties() {
+        return parties;
+    }
+
+    /**
+     * Sets parties.
+     *
+     * @param parties the parties
+     */
+    public void setParties(Set<Party> parties) {
+        this.parties = parties;
+    }
+
+    /**
      * Add recipe ingredient.
      *
      * @param recipeIngredient the recipe
@@ -221,6 +242,26 @@ public class Recipe {
     public void removeRecipeStep(RecipeStep recipeStep) {
         recipeSteps.remove(recipeStep);
         recipeStep.setRecipe(null);
+    }
+
+    /**
+     * Add party.
+     *
+     * @param party the party
+     */
+    public void addParty(Party party) {
+        parties.add(party);
+        party.setRecipe(this);
+    }
+
+    /**
+     * Remove party.
+     *
+     * @param party the recipe step
+     */
+    public void removeParty(Party party) {
+        parties.remove(party);
+        party.setRecipe(null);
     }
 
 

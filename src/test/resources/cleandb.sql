@@ -1,3 +1,4 @@
+DELETE FROM party;
 DELETE FROM recipe_step;
 DELETE FROM recipe_ingredient;
 DELETE FROM recipe;
@@ -19,3 +20,6 @@ INSERT INTO recipe_step VALUES (1, 1, 'Mix flour, cinnamon, and cocoa powder in 
                                      (3, 3, 'Add wet ingredients to dry', 1),
                                      (4, 1, 'Place crust in pie pan', 2),
                                      (5, 2, 'Add canned cherries to crust', 2);
+INSERT INTO party VALUES (1, 1, 1, '1995-12-20 12:30:00', 'Baking cookies'),
+                         (2, 1, 3, '1996-04-18 02:30:00', 'Baking pie'),
+                         (3, 2, 2, '2010-02-24 18:20:00', 'Baking brownies');

@@ -35,6 +35,10 @@ public class User {
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
     private Set<Recipe> recipes = new HashSet<>();
 
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
+    private Set<Party> parties = new HashSet<>();
+
+
     /**
      * Instantiates a new User.
      */
@@ -162,6 +166,24 @@ public class User {
     }
 
     /**
+     * Gets parties.
+     *
+     * @return the parties
+     */
+    public Set<Party> getParties() {
+        return parties;
+    }
+
+    /**
+     * Sets parties.
+     *
+     * @param parties the parties
+     */
+    public void setParties(Set<Party> parties) {
+        this.parties = parties;
+    }
+
+    /**
      * Add recipe.
      *
      * @param recipe the recipe
@@ -171,9 +193,34 @@ public class User {
         recipe.setUser(this);
     }
 
+    /**
+     * Remove recipe.
+     *
+     * @param recipe the recipe
+     */
     public void removeRecipe(Recipe recipe) {
         recipes.remove(recipe);
         recipe.setUser(null);
+    }
+
+    /**
+     * Add party.
+     *
+     * @param party the party
+     */
+    public void addParty(Party party) {
+        parties.add(party);
+        party.setUser(this);
+    }
+
+    /**
+     * Remove party.
+     *
+     * @param party the party
+     */
+    public void removeParty(Party party) {
+        parties.remove(party);
+        party.setUser(null);
     }
 
     @Override
