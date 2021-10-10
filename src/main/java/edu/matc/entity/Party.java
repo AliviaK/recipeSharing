@@ -10,7 +10,7 @@ import java.util.Date;
 import java.util.Objects;
 
 /**
- * The type Recipe ingredient.
+ * The Party class
  */
 @Entity(name = "Party")
 @Table(name = "party")

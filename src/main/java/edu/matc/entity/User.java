@@ -39,6 +39,7 @@ public class User {
     private Set<Party> parties = new HashSet<>();
 
 
+
     /**
      * Instantiates a new User.
      */

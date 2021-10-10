@@ -285,3 +285,8 @@
 [DEBUG] 2021-10-09 18:06:40.599 [main] GenericDao - Searching for Party with name = br
 [DEBUG] 2021-10-09 18:07:52.911 [main] GenericDao - Searching for Party with details = b
 [DEBUG] 2021-10-09 18:08:08.521 [main] GenericDao - Searching for Party with details = b
+[DEBUG] 2021-10-09 19:23:58.383 [main] GenericDao - Searching for Party with details = b
+[DEBUG] 2021-10-09 19:23:59.174 [main] GenericDao - Searching for Recipe with name = br
+[DEBUG] 2021-10-09 19:24:00.007 [main] GenericDao - Searching for RecipeIngredient with amount = 1
+[DEBUG] 2021-10-09 19:24:00.865 [main] GenericDao - Searching for RecipeStep with direction = mix
+[DEBUG] 2021-10-09 19:24:02.426 [main] GenericDao - Searching for User with lastName = ben

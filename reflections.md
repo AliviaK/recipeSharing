@@ -93,9 +93,17 @@ tests for the rest of these tables in the coming week. I practiced making my fir
 it with the main on gitHub.
 
 ### Week 6
-#### Week of 10/4: 2 hours
+#### Week of 10/4: 4.5 hours
 
 Tasks Accomplished:
 + Sign up for AWS
 + Create first environment in Amazon Beanstalk
 + Deploy project
+
+This week I signed up for AWS and after some trial and error with database issues, I got my project deployed via Amazon
+Beanstalk. After that I finished creating the POJO classes for all remaining tables aside from the Party_User
+table. I ran into some issues while trying to figure out the relationship, whether it was one-to-many or many-to-many 
+between party and user, because party has one user as "host", but also has many attendees per party and users can attend
+many parties. I consulted these two articles while trying out both options:   
+https://www.baeldung.com/hibernate-many-to-many
+https://stackoverflow.com/questions/3585034/how-to-map-a-composite-key-with-jpa-and-hibernate
