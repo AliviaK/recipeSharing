@@ -93,12 +93,13 @@ tests for the rest of these tables in the coming week. I practiced making my fir
 it with the main on gitHub.
 
 ### Week 6
-#### Week of 10/4: 4.5 hours
+#### Week of 10/4: 5 hours
 
 Tasks Accomplished:
 + Sign up for AWS
 + Create first environment in Amazon Beanstalk
 + Deploy project
++ Complete peer reviews
 
 This week I signed up for AWS and after some trial and error with database issues, I got my project deployed via Amazon
 Beanstalk. After that I finished creating the POJO classes for all remaining tables aside from the Party_User
@@ -107,3 +108,5 @@ between party and user, because party has one user as "host", but also has many 
 many parties. I consulted these two articles while trying out both options:   
 https://www.baeldung.com/hibernate-many-to-many
 https://stackoverflow.com/questions/3585034/how-to-map-a-composite-key-with-jpa-and-hibernate
+I will be continuing next week to solve this issue so I can move forward with creating the servlets to create and upload
+this data. 

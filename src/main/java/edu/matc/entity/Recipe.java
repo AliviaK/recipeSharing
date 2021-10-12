@@ -270,7 +270,8 @@ public class Recipe {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Recipe recipe = (Recipe) o;
-        return id == recipe.id && isPublic == recipe.isPublic && Objects.equals(user, recipe.user) && Objects.equals(name, recipe.name) && Objects.equals(notes, recipe.notes);
+        return id == recipe.id && isPublic == recipe.isPublic && Objects.equals(user, recipe.user) &&
+                Objects.equals(name, recipe.name) && Objects.equals(notes, recipe.notes);
     }
 
     @Override
