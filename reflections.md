@@ -110,3 +110,19 @@ https://www.baeldung.com/hibernate-many-to-many
 https://stackoverflow.com/questions/3585034/how-to-map-a-composite-key-with-jpa-and-hibernate
 I will be continuing next week to solve this issue so I can move forward with creating the servlets to create and upload
 this data. 
+
+### Week 7
+#### Week of 10/11: 4 hours (so far)
+
+Tasks Accomplished:
++ Set up AWS Cognito
++ Create tests for PartyDao/RecipeDao/RecipeIngredientDao/RecipeStepDao
++ Finish database design
++ Complete checkpoint 2
+
+This week I added signup and authentication using AWS Cognito. I prepared for checkpoint 2 by finalizing my database 
+design, and I determined I will make party_users a many-to-many table. I also finalized my database by adding a recipe
+review table to hold ratings and reviews by users. I looked ahead and began doing research on javamail, and found this
+tutorial to reference at a later date: https://www.tutorialspoint.com/javamail_api/javamail_api_quick_guide.htm
+I also reviewed the FAQs on Javamail's github which I am pasting here since it will definitely come in handy: 
+https://javaee.github.io/javamail/FAQ.html#1

@@ -152,4 +152,17 @@ public class Party {
                 ", details='" + details + '\'' +
                 '}';
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Party party = (Party) o;
+        return id == party.id && Objects.equals(user, party.user) && Objects.equals(recipe, party.recipe) && Objects.equals(partyDate, party.partyDate) && Objects.equals(details, party.details);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, user, recipe, partyDate, details);
+    }
 }

@@ -1,4 +1,4 @@
-em## Current Ideas:
+
 ### User Table:
 - UserID(int autoincrement)* not null
 - Username(varchar) not null
@@ -6,19 +6,20 @@ em## Current Ideas:
 - EmailAddress(varchar) not null
 
 ### Recipe Table
-- RecipeID(int autoincrement)* not null
+- ID(int autoincrement)* not null
 - UserID(int)! not null
 - RecipeName(varchar) not null
 - IsPublic(boolean) not null
-- Description(varchar)
+- Notes(varchar)
 
 ## RecipeIngredient Table
-- RecipeID(int)!* not null
+- ID(int autoincrement)* not null
+- RecipeID(int)! not null
 - IngredientName(varchar)* not null
-- Measurement(varchar) not null
 
 ## RecipeStep Table
-- RecipeID(int)!* not null
+- ID(int autoincrement)* not null
+- RecipeID(int)! not null
 - StepOrder(int)* not null
 - Direction(varchar) not null
 
@@ -28,11 +29,6 @@ em## Current Ideas:
 - RecipeID(int)! not null
 - Date (DateTime) not null
 - Details (varchar) null
-
-### PartyUser Table
-- PartyID(int)*! not null
-- UserID(int)*! not null
-
 
 
 #### * denotes Primary Key

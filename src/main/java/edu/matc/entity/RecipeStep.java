@@ -126,4 +126,16 @@ public class RecipeStep {
                 '}';
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        RecipeStep that = (RecipeStep) o;
+        return id == that.id && orderNumber == that.orderNumber && Objects.equals(direction, that.direction) && Objects.equals(recipe, that.recipe);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, orderNumber, direction, recipe);
+    }
 }

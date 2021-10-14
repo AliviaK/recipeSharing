@@ -66,7 +66,7 @@ class UserDaoTest {
         int id = genericDao.insert(userToAdd);
         assertNotEquals(0, id);
         User insertedUser = (User) genericDao.getById(id);
-        assertEquals("Pierce", insertedUser.getFirstName());
+        assertEquals(userToAdd, insertedUser);
     }
 
     @Test

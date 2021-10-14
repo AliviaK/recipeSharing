@@ -20,47 +20,49 @@
 
 ## Weekly Goals
 ### Week 3
-+ Implement Log4J
-+ Implement JUnit
-+ Create Screen Design
-+ Design Application Flow
-+ Write Tasks by MVP
++ Implement Log4J (Completed)
++ Implement JUnit (Completed)
++ Create Screen Design (Partially Completed)
++ Design Application Flow (Completed)
++ Write Tasks by MVP (Completed)
 
 ### Week 4
-+ Begin Database design
-+ Begin homepage design
-+ Implement Hibernate/DAO in project
-+ Write unit tests for DAO
-+ Write full CRUD capabilities for DAO
++ Begin Database design (Completed)
++ Begin homepage design (Completed)
++ Implement Hibernate/DAO in project (Completed)
++ Write unit tests for DAO (Completed)
++ Write full CRUD capabilities for DAO (Completed)
 
 ### Week 5
-+ Create Recipe class
-+ Create recipe table in database (one user, many recipes)
-+ Create party table
-+ Begin recipe insert/convert tests
++ Create Recipe class (Completed)
++ Create recipe table in database (one user, many recipes) (Completed)
++ Create party table (Completed)
 
 ### Week 6
-+ Sign up for AWS
-+ Deploy project to AWS
-+ Continue on recipe insert/convert methods
++ Sign up for AWS (Completed)
++ Deploy project to AWS (Completed)
++ Create recipe search by name
 
 ### Week 7
-+ Create user and user_roles tables
-+ Add signup/login functionality (authentication)
++ Add signup/login/authentication functionality with Beanstalk
 + Begin Amazon Rekognition research
-+ Assure completion of Checkpoint 2 requirements
-+ Complete recipe insert/convert functionality
++ Finalize database design
++ Assure removal of all println and printstacktrace uses (Completed)
++ Create insert recipe form/jsp/javascript
 
 ### Week 8
 + Add javamail API to project
 + Create javamail POJO 
 + Begin "Cooking Party" design
++ Finish insert recipe
++ Begin edit/delete recipe functionality 
 
 ### Week 9
 + Create JSPs for all DAOs
 + Create recipe search page
 + Assure completion of Checkpoint 3 requirements
 + Create RESTful service for users to edit or view private recipes they've been granted permissions to
++ Present Rekognition research
 
 ### Week 10
 + Complete partner assignment
@@ -72,6 +74,7 @@
 + Continue group API project
 + Work on Bootstrap or other css design of JSPs
 + Create recipe review/comment capabilities 
++ Assure insert/edit/delete recipe functionality
 
 ### Week 12
 + Assure javamail functionality
@@ -82,10 +85,12 @@
 ### Week 13
 + Implement JavaBeans for recipe
 + Assure edit/send party functionalities 
++ If time, create scale or photo upload
 
 ### Week 14
 + Complete peer review
 + Finish JSP design
++ If time, assure scale or photo upload functionality
 
 ### Week 15
 + Add finishing touches 

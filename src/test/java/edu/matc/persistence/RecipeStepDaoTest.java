@@ -71,7 +71,7 @@ class RecipeStepDaoTest {
         int id = genericDao.insert(recipeStepToAdd);
         assertNotEquals(0, id);
         RecipeStep insertedRecipeStep = (RecipeStep) genericDao.getById(id);
-        assertEquals("Fold in chocolate chips", insertedRecipeStep.getDirection());
+        assertEquals(recipeStepToAdd, insertedRecipeStep);
         assertNotNull(insertedRecipeStep.getRecipe());
         assertEquals("Mini Pie", insertedRecipeStep.getRecipe().getName());
     }

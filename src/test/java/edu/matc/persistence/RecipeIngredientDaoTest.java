@@ -30,7 +30,7 @@ class RecipeIngredientDaoTest {
     void getByIdSuccess() {
         RecipeIngredient retrievedRecipe = (RecipeIngredient) genericDao.getById(3);
         assertNotNull(retrievedRecipe);
-        assertEquals("Coconut Oil", retrievedRecipe.getIngredient());
+        assertEquals("1 cup Coconut Oil", retrievedRecipe.getIngredient());
     }
 
     /**
@@ -47,7 +47,7 @@ class RecipeIngredientDaoTest {
      */
     @Test
     void getByPropertyLikeSuccess() {
-        List<RecipeIngredient> recipes = genericDao.getByPropertyLike("amount", "1", "RecipeIngredient");
+        List<RecipeIngredient> recipes = genericDao.getByPropertyLike("ingredient", "o", "RecipeIngredient");
         assertEquals(3, recipes.size());
     }
 
@@ -66,13 +66,13 @@ class RecipeIngredientDaoTest {
         GenericDao recipeDao = new GenericDao(Recipe.class);
         Recipe recipe = (Recipe) recipeDao.getById(2);
 
-        RecipeIngredient recipeIngredientToAdd = new RecipeIngredient(recipe, "Honey", "3/4 cup");
+        RecipeIngredient recipeIngredientToAdd = new RecipeIngredient(recipe, "Honey");
         recipe.addRecipeIngredient(recipeIngredientToAdd);
 
         int id = genericDao.insert(recipeIngredientToAdd);
         assertNotEquals(0, id);
         RecipeIngredient insertedRecipeIngredient = (RecipeIngredient) genericDao.getById(id);
-        assertEquals("Honey", insertedRecipeIngredient.getIngredient());
+        assertEquals(recipeIngredientToAdd, insertedRecipeIngredient);
         assertNotNull(insertedRecipeIngredient.getRecipe());
         assertEquals("Mini Pie", insertedRecipeIngredient.getRecipe().getName());
     }

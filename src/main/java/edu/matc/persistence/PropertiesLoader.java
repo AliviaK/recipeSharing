@@ -1,5 +1,8 @@
 package edu.matc.persistence;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 import java.io.*;
 import java.util.*;
 
@@ -11,7 +14,7 @@ import java.util.*;
  *
  */
 public interface PropertiesLoader {
-
+    Logger logger = LogManager.getLogger(PropertiesLoader.class);
     /**
      * This default method will load a properties file into a Properties instance
      * and return it.
@@ -24,11 +27,9 @@ public interface PropertiesLoader {
         try {
             properties.load(this.getClass().getResourceAsStream(propertiesFilePath));
         } catch (IOException ioException) {
-            System.out.println("There was a problem inputting the properties file");
-            ioException.printStackTrace();
+            logger.error("There was a problem inputting the properties file");
         } catch (Exception exception) {
-            System.out.println("There was a problem with the properties file");
-            exception.printStackTrace();
+            logger.error("There was a problem with the properties file");
         }
         return properties;
     }

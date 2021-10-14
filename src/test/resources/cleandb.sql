@@ -12,9 +12,9 @@ INSERT INTO user VALUES (1, 'Jeff', 'Winger', 'jwinger', 'jwinger@greendale.edu'
 INSERT INTO recipe VALUES (1, 5, 'Brownies', 'Delicious and chocolatey', true),
                           (2, 5, 'Mini Pie', 'Single serving pie that works with your favorite fruit filling', true),
                           (3, 2, 'Bear Claws', 'Flaky almond dessert croissant', true);
-INSERT INTO recipe_ingredient VALUES (1, 1, 'Chocolate Chips', '1/2 cup'),
-                                    (2, 1, 'Baking Powder', '1 tsp'),
-                                    (3, 2, 'Coconut Oil', '1/2 cup');
+INSERT INTO recipe_ingredient VALUES (1, 1, '1/2 cup Chocolate Chips'),
+                                    (2, 1, '1 tsp Baking Powder'),
+                                    (3, 2, '1 cup Coconut Oil');
 INSERT INTO recipe_step VALUES (1, 1, 'Mix flour, cinnamon, and cocoa powder in large bowl', 1),
                                      (2, 2, 'Combine eggs and sugar in medium bowl', 1),
                                      (3, 3, 'Add wet ingredients to dry', 1),
