@@ -46,9 +46,10 @@
 ### Week 7
 + Add signup/login/authentication functionality with Beanstalk
 + Begin Amazon Rekognition research
-+ Finalize database design
++ Finalize database design (Completed)
 + Assure removal of all println and printstacktrace uses (Completed)
 + Create insert recipe form/jsp/javascript
++ Create and test all entities (5/7 completed)
 
 ### Week 8
 + Add javamail API to project
