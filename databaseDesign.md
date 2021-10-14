@@ -1,14 +1,14 @@
 ![Database Design](screenshots/databaseERD.PNG)
 
 
-### User Table:
+## User Table:
 - UserID(int autoincrement)* not null
 - Username(varchar) not null
 - FirstName(varchar) not null
 - LastName(varchar) not null
 - EmailAddress(varchar) not null
 
-### Recipe Table
+## Recipe Table
 - ID(int autoincrement)* not null
 - UserID(int)! not null
 - Name(varchar) not null
@@ -26,23 +26,23 @@
 - OrderNumber(int)* not null
 - Direction(varchar) not null
 
-### RecipeReview Table
+## RecipeReview Table
 - ID(int autoincrement)* not null
 - RecipeID(int)! not null
 - UserID(int)! not null
 - Stars(int)
 - Review(varchar)
 
-### Party Table
+## Party Table
 - ID(int autoincrement)* not null
 - UserID (int)! not null
 - RecipeID(int)! not null
 - PartyDate (DateTime) not null
 - Details (varchar) null
 
-### PartyUser Table
+## PartyUser Table
 - UserID(int)*! not null
 - PartyID(int)*! not null
 
-#### * denotes Primary Key
-#### ! denotes Foreign Key
+### * denotes Primary Key
+### ! denotes Foreign Key
