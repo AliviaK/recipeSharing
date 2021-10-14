@@ -32,8 +32,16 @@
 </head>
 
 <div class="jumbotron bg-info">
+    <c:choose>
+        <c:when test="${empty userName}">
+            <a href = "logIn">Log in</a>
+        </c:when>
+        <c:otherwise>
+            <h3>Welcome ${userName}</h3>
+            <a href="viewProfile.jsp" class="text-white">Profile</a>
+        </c:otherwise>
+    </c:choose>
     <a href="index.jsp" class="text-white">Home</a>
     <a href="recipeSearch.jsp" class="text-white">Recipe Search</a>
     <a href="addRecipe.jsp" class="text-white">Add Recipe</a>
-    <a href="#" class="text-white">Profile</a>
 </div>
