@@ -62,7 +62,7 @@
 + Create JSPs for all DAOs
 + Create recipe search page
 + Assure completion of Checkpoint 3 requirements
-+ Create RESTful service for users to edit or view private recipes they've been granted permissions to
++ Create recipe access for users with permissions
 + Present Rekognition research
 
 ### Week 10
