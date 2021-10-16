@@ -1,8 +1,9 @@
 <%@include file="head.jsp"%>
-<html>
-<body>
 
-<h2>User Display Exercise</h2>
+<header>
+    <h1>Search Users</h1>
+</header>
+
 <form action="searchUser" class="form-inline">
     <div class="form-group">
         <label for="searchTerm">Search</label>
@@ -12,5 +13,5 @@
     <button type="submit" name="submit" value="searchFirst">Search by first name</button>
     <button type="submit" name="submit" value="searchAll">See All Users</button>
 </form>
-</body>
-</html>
+
+<%@include file="footer.jsp"%>

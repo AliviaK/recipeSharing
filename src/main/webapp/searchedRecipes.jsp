@@ -1,10 +1,11 @@
 <%@include file="taglib.jsp"%>
 <%@include file="head.jsp"%>
 
-<html><body>
+<header>
+    <h1>Search Results: </h1>
+</header>
 
-<div class="container-fluid">
-    <h2>Search Results: </h2>
+<div class="row">
     <table class="table">
         <thead>
         <th>Name</th>
@@ -31,5 +32,4 @@
     </table>
 </div>
 
-</body>
-</html>
+<%@include file="footer.jsp"%>

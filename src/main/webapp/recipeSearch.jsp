@@ -1,6 +1,4 @@
 <%@include file="head.jsp"%>
-<html>
-<body>
 
 <h2>Search Recipes</h2>
 <form action="searchRecipe" class="form-inline">
@@ -11,5 +9,5 @@
     <button type="submit" name="submit" value="searchName">Search by name</button>
     <button type="submit" name="submit" value="searchAll">See All Recipes</button>
 </form>
-</body>
-</html>
+
+<%@include file="footer.jsp"%>

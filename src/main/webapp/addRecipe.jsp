@@ -1,23 +1,31 @@
 <%@include file="head.jsp"%>
-<html>
-<body>
 
-<h2>Add Recipe</h2>
-<form action="addNewRecipe" class="form-inline">
-    <div class="form-group">
+<header>
+    <h1>Add Recipe</h1>
+</header>
+
+<form action="addNewRecipe" class="form-row">
+    <div class="form-group col-12">
         <label for="name">Name: </label>
         <input type="text" class="form-control" id="name" name="name" class="name">
     </div>
-    <div class="form-group">
+    <div class="form-group col-12">
         <label for="notes">Notes/Description: </label>
         <input type="text" class="form-control" id="notes" name="notes" class="notes">
     </div>
-    <div class="form-group">
-        <label for="ingredient1">Ingredient: </label>
-        <input type="text" class="form-control" id="ingredient1" name="recipeIngredient" class="recipeIngredient">
+    <div id="addIngredientDiv">
+        <div class="form-group col-12">
+            <label for="ingredient0">Ingredient: </label>
+            <input type="text" class="form-control" id="ingredient0" name="recipeIngredient">
+        </div>
     </div>
-    <button type="button" name="addAnother" value="addAnother">Add another ingredient</button>
-    <button type="submit" name="submit" value="createRecipe">Add new recipe</button>
+    <div class="col-12">
+        <button type="button" id="addIngredient">Add another ingredient</button>
+        <button type="submit" id="createRecipe" value="createRecipe">Add new recipe</button>
+    </div>
 </form>
-</body>
-</html>
+
+
+
+
+<%@include file="footer.jsp"%>

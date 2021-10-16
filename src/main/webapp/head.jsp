@@ -1,4 +1,7 @@
 <!DOCTYPE html>
+
+<%@include file="taglib.jsp"%>
+
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -21,27 +24,24 @@
     <!-- Latest compiled and minified JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
-
-
-    <script src="js/validator.js"></script>
-    <script src="js/datepicker.js"></script>
-
     <!-- Personal JavaScript -->
-    <script src="resources/mainFunctions.js"></script>
+    <script src="js/mainFunctions.js"></script>
 
 </head>
 
-<div class="jumbotron bg-info">
-    <c:choose>
-        <c:when test="${empty userName}">
-            <a href = "logIn">Log in</a>
-        </c:when>
-        <c:otherwise>
-            <h3>Welcome ${userName}</h3>
-            <a href="viewProfile.jsp" class="text-white">Profile</a>
-        </c:otherwise>
-    </c:choose>
-    <a href="index.jsp" class="text-white">Home</a>
-    <a href="recipeSearch.jsp" class="text-white">Recipe Search</a>
-    <a href="addRecipe.jsp" class="text-white">Add Recipe</a>
-</div>
+<body>
+    <div class="container-fluid">
+        <div class="jumbotron bg-info">
+            <c:choose>
+                <c:when test="${empty userName}">
+                    <a href = "logIn">Log in</a>
+                </c:when>
+                <c:otherwise>
+                    <p>Welcome ${userName}</p>
+                    <a href="viewProfile.jsp" class="text-white">Profile</a>
+                </c:otherwise>
+            </c:choose>
+            <a href="index.jsp" class="text-white">Home</a>
+            <a href="recipeSearch.jsp" class="text-white">Recipe Search</a>
+            <a href="addRecipe.jsp" class="text-white">Add Recipe</a>
+        </div>
