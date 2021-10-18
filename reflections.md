@@ -112,20 +112,28 @@ I will be continuing next week to solve this issue so I can move forward with cr
 this data. 
 
 ### Week 7
-#### Week of 10/11: 4 hours (so far)
+#### Week of 10/11: 6. hours
 
 Tasks Accomplished:
 + Set up AWS Cognito
 + Create tests for PartyDao/RecipeDao/RecipeIngredientDao/RecipeStepDao
 + Finish database design
 + Complete checkpoint 2
++ Add Cognito
++ Begin creating form and JavaScript for inserting new recipe
 
 This week I added signup and authentication using AWS Cognito. I prepared for checkpoint 2 by finalizing my database 
 design, and I determined I would make party_users a many-to-many table. I also finalized my database by adding a recipe
 review table to hold ratings and reviews by users. I've made entities for 5 of the tables so far and created unit tests
-for all of them, and by the end of the week I will have all 7 entities created and tested.
+for all of them, and by the end of next week I plan to have all 7 entities created and tested.
 
 I looked ahead and began doing research on javamail, and found this
 tutorial to reference at a later date: https://www.tutorialspoint.com/javamail_api/javamail_api_quick_guide.htm
 I also reviewed the FAQs on Javamail's github which I am pasting here since it will definitely come in handy: 
 https://javaee.github.io/javamail/FAQ.html#1
+
+I began fixing up the layout of my jsps and Bootstrap errors, so that I am better set up when I work further on the 
+design aspect. I created a jsp and servlet for inserting a new recipe, which I haven't completed yet but spent time 
+creating the form and making it look nice with Bootstrap. It is a dynamic form so that users can click a button to add 
+additional ingredients as needed, so I created a JavaScript file to generate a new input when clicked. I will do the 
+same for steps, and next I will get to work on processing the form itself in the servlet.
