@@ -112,7 +112,7 @@ I will be continuing next week to solve this issue so I can move forward with cr
 this data. 
 
 ### Week 7
-#### Week of 10/11: 6. hours
+#### Week of 10/11: 6.5 hours
 
 Tasks Accomplished:
 + Set up AWS Cognito
@@ -137,3 +137,16 @@ design aspect. I created a jsp and servlet for inserting a new recipe, which I h
 creating the form and making it look nice with Bootstrap. It is a dynamic form so that users can click a button to add 
 additional ingredients as needed, so I created a JavaScript file to generate a new input when clicked. I will do the 
 same for steps, and next I will get to work on processing the form itself in the servlet.
+
+### Week 8
+#### Week of 10/18: 2.5 hours
+
+Tasks Accomplished:
++ Set up SendGrid API key and send successful email via SoapUI
++ Finish all page mockups
+
+Most of this week I was out of town and was unable to bring anything beside my laptop, so unfortunately aside from 
+getting the weekly assignment done I was not able to accomplish much and fell a bit behind. I was able to finish mockups
+of all pages and did some research on which API to use, which I decided on SendGrid instead of JavaMail on a
+recommendation by my manager. I signed up for an API key and spent some time getting it configured to my project, which 
+I plan this week to write tests and send my first email through the app. I successfully sent an email through SoapUI.
