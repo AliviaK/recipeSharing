@@ -27,5 +27,3 @@ public class SendPartyInvite {
 
     }
 }
-
-// curl -X "POST" "https://api.sendgrid.com/v3/mail/send" -H "Authorization: Bearer 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" -H "Content-Type: application/json" --data "{"personalizations": [{"to": [{"email": "pekoedog22@gmail.com"}]}],"from": {"email": "adkleinfeldt@madisoncollege.edu"},"subject": "Hello","content": [{"type": "text/plain", "value": "Email"}]}"
