@@ -52,24 +52,23 @@
 + Create and test all entities (5/7 completed)
 
 ### Week 8
-+ Add javamail API to project
-+ Create javamail POJO 
-+ Begin "Cooking Party" design
-+ Finish insert recipe
++ Sign up for SendMail (Completed)
 + Begin edit/delete recipe functionality 
 
 ### Week 9
-+ Create JSPs for all DAOs
-+ Create recipe search page
-+ Assure completion of Checkpoint 3 requirements
++ Create JSPs for all DAOs (Competed)
++ Create recipe search page (Completed)
++ Add javamail API to project (In progress)
++ Finish insert recipe (In progress)
 + Create recipe access for users with permissions
 + Present Rekognition research
 
 ### Week 10
++ Assure completion of Checkpoint 3 requirements
++ Add Cognito to Amazon
 + Complete partner assignment
 + Begin group API creation
-+ Finish "Cooking Party" design
-+ Make "Cooking Party" editable
++ Begin "Cooking Party" design
 
 ### Week 11
 + Continue group API project
@@ -78,7 +77,7 @@
 + Assure insert/edit/delete recipe functionality
 
 ### Week 12
-+ Assure javamail functionality
++ Assure SendMail functionality
 + Add recipe search by tags
 + Add recipe search by ratings
 + Add pagination for recipe search results
