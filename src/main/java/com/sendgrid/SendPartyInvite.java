@@ -21,9 +21,5 @@ public class SendPartyInvite {
         Client client = ClientBuilder.newClient();
         // TODO read in uri from properties file
 
-        // WebTarget target =
-        //       client.target("https://api.sendgrid.com/v3/mail/send");
-        // String response = target.request(MediaType.APPLICATION_JSON).post(Entity.json(), String.class);
-
     }
 }
