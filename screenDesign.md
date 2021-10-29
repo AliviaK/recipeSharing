@@ -1,1 +1,1 @@
-![](HomepageDraft.PNG)
+![](pageMockups/HomepageDraft.PNG)
