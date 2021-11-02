@@ -53,3 +53,8 @@ database.properties
 hibernate.cfg.xml
 cognito.properties
 env.properties
+
+# AWS
+https-instance.config
+https-instance-single.config
+ssl.conf
