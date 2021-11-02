@@ -41,43 +41,44 @@
 ### Week 6
 + Sign up for AWS (Completed)
 + Deploy project to AWS (Completed)
-+ Create recipe search by name
++ Create recipe search by name (Completed)
 
 ### Week 7
-+ Add signup/login/authentication functionality with Beanstalk
-+ Begin Amazon Rekognition research
++ Add signup/login/authentication functionality with Beanstalk (Completed)
++ Begin Amazon Rekognition research (Completed)
 + Finalize database design (Completed)
 + Assure removal of all println and printstacktrace uses (Completed)
-+ Create insert recipe form/jsp/javascript
++ Create insert recipe form/jsp/javascript (In Progress)
 + Create and test all entities (5/7 completed)
 
 ### Week 8
 + Sign up for SendMail (Completed)
-+ Begin edit/delete recipe functionality 
++ Continue insert recipe development 
 
 ### Week 9
 + Create JSPs for all DAOs (Competed)
 + Create recipe search page (Completed)
-+ Add javamail API to project (In progress)
-+ Finish insert recipe (In progress)
-+ Create recipe access for users with permissions
-+ Present Rekognition research
++ Add javamail API to project (In Progress)
++ Progress insert recipe (In Progress)
++ Present Rekognition research (Completed)
 
 ### Week 10
 + Assure completion of Checkpoint 3 requirements
-+ Add Cognito to Amazon
++ Add Cognito to Amazon (Completed)
++ Begin group API creation (In Progress)
 + Complete partner assignment
-+ Begin group API creation
++ Finish insert recipe
 + Begin "Cooking Party" design
 
 ### Week 11
++ Troubleshoot JavaMail
 + Continue group API project
 + Work on Bootstrap or other css design of JSPs
 + Create recipe review/comment capabilities 
 + Assure insert/edit/delete recipe functionality
 
 ### Week 12
-+ Assure SendMail functionality
++ Assure JavaMail connection
 + Add recipe search by tags
 + Add recipe search by ratings
 + Add pagination for recipe search results

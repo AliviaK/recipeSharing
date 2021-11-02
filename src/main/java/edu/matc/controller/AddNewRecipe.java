@@ -2,7 +2,6 @@ package edu.matc.controller;
 
 
 import com.sendgrid.*;
-
 import com.sendgrid.helpers.mail.Mail;
 import com.sendgrid.helpers.mail.objects.Content;
 import com.sendgrid.helpers.mail.objects.Email;
@@ -18,7 +17,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-@WebServlet(name = "AddNewRecipe", urlPatterns = { "/addNewRecipe" } )
+@WebServlet(name = "AddNewRecipe", urlPatterns = { "/addNewRecipe"} )
 public class AddNewRecipe extends HttpServlet {
     private final Logger logger = LogManager.getLogger(this.getClass());
 
