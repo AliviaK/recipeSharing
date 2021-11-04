@@ -150,3 +150,20 @@ getting the weekly assignment done I was not able to accomplish much and fell a 
 of all pages and did some research on which API to use, which I decided on SendGrid instead of JavaMail on a
 recommendation by my manager. I signed up for an API key and spent some time getting it configured to my project, which 
 I plan this week to write tests and send my first email through the app. I successfully sent an email through SoapUI.
+
+### Week 9
+#### Week of 10/26: 12 hours (4 hours on Indie Project) (8 hours on Research Project)
+
+Tasks Accomplished:
++ Troubleshoot SendGrid
++ Deploy to AWS with Cognito Sign-in
++ Finish research on Amazon Rekognition
+
+This week I returned home late so my week was cut a bit short, and I also had to dedicate most of my work time to
+putting together my research project demo and video, which I did on Amazon Rekognition. I was able to put a few hours in
+after completing my research project and getting caught up on weekly work. I configured my app for deployment to AWS
+with Amazon Cognito and got the elastic IP set up, so I was able to see my app deployed without having to run through
+localhost. I spent several hours troubleshooting SendGrid and sadly my account was suspended, likely because I was 
+sending and successfully delivering emails to and from my own email addresses. I will be switching back to JavaMail as 
+originally planned, which puts me a bit further behind where I planned and hoped to be. I also met with my team for the
+team project and my next weeks will be dedicated to getting back on track in my project and completing the team work. 
