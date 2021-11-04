@@ -15,7 +15,7 @@ my first draft of my problem statement and MVP, and writing some user stories. I
 two activities this week.
 
 ### Week 2
-#### Week of 9/6: 7 hours
+#### Week of 9/06: 7 hours
 
 Tasks Accomplished:
 + Create indie project repository
@@ -93,7 +93,7 @@ tests for the rest of these tables in the coming week. I practiced making my fir
 it with the main on gitHub.
 
 ### Week 6
-#### Week of 10/4: 5 hours
+#### Week of 10/04: 5 hours
 
 Tasks Accomplished:
 + Sign up for AWS
@@ -152,7 +152,7 @@ recommendation by my manager. I signed up for an API key and spent some time get
 I plan this week to write tests and send my first email through the app. I successfully sent an email through SoapUI.
 
 ### Week 9
-#### Week of 10/26: 12 hours (4 hours on Indie Project) (8 hours on Research Project)
+#### Week of 10/25: 12 hours (4 hours on Indie Project) (8 hours on Research Project)
 
 Tasks Accomplished:
 + Troubleshoot SendGrid
@@ -167,3 +167,10 @@ localhost. I spent several hours troubleshooting SendGrid and sadly my account w
 sending and successfully delivering emails to and from my own email addresses. I will be switching back to JavaMail as 
 originally planned, which puts me a bit further behind where I planned and hoped to be. I also met with my team for the
 team project and my next weeks will be dedicated to getting back on track in my project and completing the team work. 
+
+## Week 10
+#### Week of 11/01
+
+Tasks Accomplished:
++ Complete Checkpoint 3
++ Close most issues on GitHub and incorporate feedback
