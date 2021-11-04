@@ -174,3 +174,4 @@ team project and my next weeks will be dedicated to getting back on track in my 
 Tasks Accomplished:
 + Complete Checkpoint 3
 + Close most issues on GitHub and incorporate feedback
++ Create custom CSS
