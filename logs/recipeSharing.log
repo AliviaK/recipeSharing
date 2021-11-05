@@ -926,3 +926,38 @@
 [DEBUG] 2021-11-02 14:26:52.314 [main] GenericDao - Searching for RecipeIngredient with ingredient = o
 [DEBUG] 2021-11-02 14:26:53.161 [main] GenericDao - Searching for RecipeStep with direction = mix
 [DEBUG] 2021-11-02 14:26:54.178 [main] GenericDao - Searching for User with lastName = ben
+[DEBUG] 2021-11-04 23:15:06.008 [main] GenericDao - Searching for Party with details = b
+[DEBUG] 2021-11-04 23:15:07.204 [main] GenericDao - Searching for Recipe with name = br
+[DEBUG] 2021-11-04 23:15:07.947 [main] GenericDao - Searching for RecipeIngredient with ingredient = o
+[DEBUG] 2021-11-04 23:15:09.522 [main] GenericDao - Searching for RecipeStep with direction = mix
+[DEBUG] 2021-11-04 23:15:10.297 [main] GenericDao - Searching for User with lastName = ben
+[DEBUG] 2021-11-04 23:19:46.569 [main] GenericDao - Searching for Party with details = b
+[DEBUG] 2021-11-04 23:19:47.732 [main] GenericDao - Searching for Recipe with name = br
+[DEBUG] 2021-11-04 23:19:48.583 [main] GenericDao - Searching for RecipeIngredient with ingredient = o
+[DEBUG] 2021-11-04 23:19:50.182 [main] GenericDao - Searching for RecipeStep with direction = mix
+[DEBUG] 2021-11-04 23:19:50.920 [main] GenericDao - Searching for User with lastName = ben
+[DEBUG] 2021-11-04 23:20:26.836 [http-nio-8080-exec-2] GenericDao - Searching for User with userName = j
+[DEBUG] 2021-11-04 23:20:27.151 [http-nio-8080-exec-2] SearchUser - null
+[DEBUG] 2021-11-04 23:25:02.732 [main] GenericDao - Searching for Party with details = b
+[DEBUG] 2021-11-04 23:25:03.603 [main] GenericDao - Searching for Recipe with name = br
+[DEBUG] 2021-11-04 23:25:04.312 [main] GenericDao - Searching for RecipeIngredient with ingredient = o
+[DEBUG] 2021-11-04 23:25:05.363 [main] GenericDao - Searching for RecipeStep with direction = mix
+[DEBUG] 2021-11-04 23:25:06.902 [main] GenericDao - Searching for User with lastName = ben
+[DEBUG] 2021-11-04 23:28:31.076 [main] GenericDao - Searching for Party with details = b
+[DEBUG] 2021-11-04 23:28:32.131 [main] GenericDao - Searching for Recipe with name = br
+[DEBUG] 2021-11-04 23:28:32.960 [main] GenericDao - Searching for RecipeIngredient with ingredient = o
+[DEBUG] 2021-11-04 23:28:33.815 [main] GenericDao - Searching for RecipeStep with direction = mix
+[DEBUG] 2021-11-04 23:28:34.958 [main] GenericDao - Searching for User with lastName = ben
+[DEBUG] 2021-11-04 23:30:51.472 [main] GenericDao - Searching for Party with details = b
+[DEBUG] 2021-11-04 23:30:52.713 [main] GenericDao - Searching for Recipe with name = br
+[DEBUG] 2021-11-04 23:30:53.556 [main] GenericDao - Searching for RecipeIngredient with ingredient = o
+[DEBUG] 2021-11-04 23:30:54.474 [main] GenericDao - Searching for RecipeStep with direction = mix
+[DEBUG] 2021-11-04 23:30:56.111 [main] GenericDao - Searching for User with lastName = ben
+[DEBUG] 2021-11-04 23:31:47.753 [http-nio-8080-exec-5] GenericDao - Searching for User with userName = b
+[DEBUG] 2021-11-04 23:31:48.079 [http-nio-8080-exec-5] SearchUser - null
+[DEBUG] 2021-11-04 23:33:23.512 [main] GenericDao - Searching for Party with details = b
+[DEBUG] 2021-11-04 23:33:24.397 [main] GenericDao - Searching for Recipe with name = br
+[DEBUG] 2021-11-04 23:33:25.233 [main] GenericDao - Searching for RecipeIngredient with ingredient = o
+[DEBUG] 2021-11-04 23:33:25.935 [main] GenericDao - Searching for RecipeStep with direction = mix
+[DEBUG] 2021-11-04 23:33:27.610 [main] GenericDao - Searching for User with lastName = ben
+[ERROR] 2021-11-04 23:34:14.413 [http-nio-8080-exec-1] PropertiesLoader - There was a problem with the properties file

@@ -6,8 +6,8 @@
 </header>
 
 <div class="container-fluid">
-    <table class="table">
-        <thead>
+    <table class="table table-bordered table-hover">
+        <thead class="table-dark">
         <th>Name</th>
         <th>Username</th>
         <th>Recipes</th>
