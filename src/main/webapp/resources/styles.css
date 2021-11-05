@@ -1,7 +1,21 @@
 body {
-    background-color: #B4436C;
+    background-color: #FBFFB9;
 }
 
 .navbar {
-    background-color: #AFC7BD;
+    background-color: #E1CE7A;
+}
+
+.purpleButton {
+    background-color: #81667A;
+    box-shadow: 2px 3px 5px #3F323B;
+}
+
+.purpleButton:hover {
+    background-color: #685162;
+}
+
+.purpleButton:active {
+    background-color: #B490AA;
+    box-shadow: 2px 3px 5px #3F323B;
 }

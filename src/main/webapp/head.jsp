@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<html lang="en" class="h-100">
 
 <%@include file="taglib.jsp"%>
 
@@ -30,39 +31,40 @@
 
 </head>
 
-<body>
+<body class="d-flex flex-column h-100">
+    <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid align-items-end">
+            <div class="navbar-brand"><img src="images/RAFLogo.png"></div>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <c:choose>
+                        <c:when test="${empty userName}">
+                            <li class="nav-item">
+                                <a href="logIn" class="nav-link link-dark m-2 fw-bold">Log in</a>
+                            </li>
+                        </c:when>
+                        <c:otherwise>
+                            <a class="navbar-brand">Welcome ${userName}</a>
+                            <li class="nav-item">
+                                <a href="viewProfile.jsp" class="nav-link link-dark m-2 fw-bold">Profile</a>
+                            </li>
+                        </c:otherwise>
+                    </c:choose>
+                    <li class="nav-item">
+                        <a href="index.jsp" class="nav-link link-dark m-2 fw-bold">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="recipeSearch.jsp" class="nav-link link-dark m-2 fw-bold">Recipe Search</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="addRecipe.jsp" class="nav-link link-dark m-2 fw-bold">Add Recipe</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
     <div class="container-fluid">
-            <nav class="navbar navbar-expand-lg p-2 m-2">
-                <div class="container-fluid">
-                    <a class="navbar-brand" href="#">Recipes Among Friends</a>
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="collapse navbar-collapse" id="navbarNav">
-                        <ul class="navbar-nav">
-                            <c:choose>
-                                <c:when test="${empty userName}">
-                                    <li class="nav-item">
-                                        <a href = "logIn">Log in</a>
-                                    </li>
-                                </c:when>
-                                <c:otherwise>
-                                    <a class="navbar-brand">Welcome ${userName}</a>
-                                    <li class="nav-item">
-                                        <a href="viewProfile.jsp" class="text-white">Profile</a>
-                                    </li>
-                                </c:otherwise>
-                            </c:choose>
-                            <li class="nav-item">
-                                <a href="index.jsp" class="nav-link text-white">Home</a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="recipeSearch.jsp" class="nav-link text-white">Recipe Search</a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="addRecipe.jsp" class="nav-link text-white">Add Recipe</a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </nav>
