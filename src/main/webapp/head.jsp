@@ -44,7 +44,7 @@
                     <c:choose>
                         <c:when test="${empty userName}">
                             <li class="nav-item">
-                                <a href="logIn" class="nav-link link-dark m-2 fw-bold">Log in</a>
+                                <a href = "logIn" class="nav-link link-dark m-2 fw-bold">Log in</a>
                             </li>
                         </c:when>
                         <c:otherwise>
