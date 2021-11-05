@@ -1,10 +1,5 @@
 package edu.matc.controller;
 
-
-import com.sendgrid.*;
-import com.sendgrid.helpers.mail.Mail;
-import com.sendgrid.helpers.mail.objects.Content;
-import com.sendgrid.helpers.mail.objects.Email;
 import edu.matc.entity.Recipe;
 import edu.matc.entity.RecipeIngredient;
 import org.apache.logging.log4j.LogManager;

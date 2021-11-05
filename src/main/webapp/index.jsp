@@ -5,13 +5,16 @@
 </header>
 
 <form action="searchUser" class="form-inline">
-    <div class="form-group">
-        <label for="searchTerm">Search</label>
-        <input type="text" class="form-control" id="searchTerm" name="searchTerm" class="searchTerm">
+    <div class="row align-items-end">
+        <div class="col form-group font-weight-bold">
+            <label for="searchTerm">Search</label>
+            <input type="text" class="form-control" id="searchTerm" name="searchTerm" class="searchTerm">
+        </div>
+        <div class="col">
+            <button class="purpleButton btn text-white font-weight-bold me-1" type="submit" name="submit" value="searchUsername">Search by Username</button>
+            <button class="purpleButton btn text-white font-weight-bold" type="submit" name="submit" value="searchAll">See All Users</button>
+        </div>
     </div>
-    <button class="btn btn-info" type="submit" name="submit" value="searchLast">Search by last name</button>
-    <button type="submit" name="submit" value="searchFirst">Search by first name</button>
-    <button type="submit" name="submit" value="searchAll">See All Users</button>
 </form>
 
 <%@include file="footer.jsp"%>
