@@ -52,7 +52,6 @@ fabric.properties
 database.properties
 hibernate.cfg.xml
 cognito.properties
-env.properties
 
 # AWS
 https-instance.config

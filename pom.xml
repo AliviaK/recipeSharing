@@ -10,25 +10,30 @@
   <packaging>war</packaging>
 
   <name>recipeSharing Maven Webapp</name>
-  <!-- FIXME change it to the project's website -->
-  <url>http://www.example.com</url>
+  <url>https://recipesharing-env-1.eba-qbeexdvh.us-east-2.elasticbeanstalk.com/</url>
 
   <properties>
-    <maven.compiler.release>11</maven.compiler.release>
+    <javax.version>7.0</javax.version>
     <junit.version>4.12</junit.version>
     <junit-vintage-version>4.12.0</junit-vintage-version>
-    <javax.version>7.0</javax.version>
+    <junit-platform-runner-version>1.0.0</junit-platform-runner-version>
     <mysql-version>8.0.16</mysql-version>
     <jstl-version>1.2</jstl-version>
     <log4j-version>2.10.0</log4j-version>
     <jupiter-version>5.0.0</jupiter-version>
-    <junit-platform-runner-version>1.0.0</junit-platform-runner-version>
+    <jersey-version>2.29.1</jersey-version>
+    <maven.compiler.release>11</maven.compiler.release>
     <maven-compiler-plugin-version>3.8.1</maven-compiler-plugin-version>
     <maven-surefire-plugin-version>2.19</maven-surefire-plugin-version>
-    <jersey-version>2.29.1</jersey-version>
   </properties>
 
   <dependencies>
+    <dependency>
+      <groupId>javax</groupId>
+      <artifactId>javaee-web-api</artifactId>
+      <version>${javax.version}</version>
+    </dependency>
+    <!-- JUnit dependencies -->
     <dependency>
       <groupId>org.junit.platform</groupId>
       <artifactId>junit-platform-runner</artifactId>
@@ -53,17 +58,13 @@
       <version>${junit.version}</version>
       <scope>test</scope>
     </dependency>
-    <dependency>
-      <groupId>javax</groupId>
-      <artifactId>javaee-web-api</artifactId>
-      <version>${javax.version}</version>
-    </dependency>
     <!--  https://mvnrepository.com/artifact/mysql/mysql-connector-java  -->
     <dependency>
       <groupId>mysql</groupId>
       <artifactId>mysql-connector-java</artifactId>
       <version>${mysql-version}</version>
     </dependency>
+    <!-- JSTL tags -->
     <dependency>
       <groupId>jstl</groupId>
       <artifactId>jstl</artifactId>
@@ -114,17 +115,7 @@
       <artifactId>commons-io</artifactId>
       <version>2.11.0</version>
     </dependency>
-    <!-- SendGrid library -->
-    <dependency>
-      <groupId>com.sendgrid</groupId>
-      <artifactId>java-http-client</artifactId>
-      <version>4.3.6</version>
-    </dependency>
-    <dependency>
-      <groupId>com.sendgrid</groupId>
-      <artifactId>sendgrid-java</artifactId>
-      <version>4.6.7</version>
-    </dependency>
+    <!-- Jersey (REST) dependencies -->
     <dependency>
       <groupId>org.glassfish.jersey.core</groupId>
       <artifactId>jersey-client</artifactId>
