@@ -23,8 +23,8 @@ public class SearchRecipe extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         GenericDao recipeDao = new GenericDao(Recipe.class);
-        if (req.getParameter("submit").equals("searchName")) {
-            req.setAttribute("recipes", recipeDao.getByPropertyLike("name", req.getParameter("searchTerm"), "Recipe"));
+        if (req.getParameter("submit").equals("searchRecipe")) {
+            req.setAttribute("recipes", recipeDao.getByPropertyLike("name", req.getParameter("searchTermRecipe"), "Recipe"));
             logger.debug(req.getParameter("name"));
         } else {
             req.setAttribute("recipes", recipeDao.getAll());

@@ -18,6 +18,10 @@
             <label for="ingredient0">Ingredient: </label>
             <input type="text" class="form-control" id="ingredient0" name="recipeIngredient">
         </div>
+        <div class="form-group col-12">
+            <label for="quantity0">Quantity: </label>
+            <input type="text" class="form-control" id="quantity0" name="ingredientQuantity">
+        </div>
     </div>
     <div class="col-12">
         <button type="button" id="addIngredient">Add another ingredient</button>

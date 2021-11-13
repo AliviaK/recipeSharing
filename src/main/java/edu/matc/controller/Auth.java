@@ -181,7 +181,7 @@ public class Auth extends HttpServlet implements PropertiesLoader {
 
         // TODO decide what you want to do with the info!
         // for now, I'm just returning username for display back to the browser
-
+        // store in session? get email
         return userName;
     }
 

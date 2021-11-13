@@ -5,9 +5,10 @@ const init = () => {
 }
 
 const processClick = () => {
-    let formDiv = document.createElement('div');
-    formDiv.setAttribute("id", "formDiv" + i);
-    formDiv.setAttribute("class", "form-group");
+    // Create div to store ingredient at quantity
+    let ingredientDiv = document.createElement('div');
+    ingredientDiv.setAttribute("id", "ingredientDiv" + i);
+    ingredientDiv.setAttribute("class", "form-group");
 
     let labelFor = document.createElement('label');
     labelFor.setAttribute("for", "ingredient" + i);
@@ -19,9 +20,9 @@ const processClick = () => {
     ingredientInput.setAttribute("name", "ingredient");
     ingredientInput.setAttribute("class", "form-control col-12");
 
-    document.getElementById("addIngredientDiv").appendChild(formDiv);
-    document.getElementById("formDiv" + i).appendChild(labelFor);
-    document.getElementById("formDiv" + i).appendChild(ingredientInput);
+    document.getElementById("addIngredientDiv").appendChild(ingredientDiv);
+    document.getElementById("ingredientDiv" + i).appendChild(labelFor);
+    document.getElementById("ingredientDiv" + i).appendChild(ingredientInput);
 
     i++;
 }

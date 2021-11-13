@@ -30,7 +30,7 @@ class RecipeIngredientDaoTest {
     void getByIdSuccess() {
         RecipeIngredient retrievedRecipe = (RecipeIngredient) genericDao.getById(3);
         assertNotNull(retrievedRecipe);
-        assertEquals("1 cup Coconut Oil", retrievedRecipe.getIngredient());
+        assertEquals("Coconut Oil", retrievedRecipe.getIngredient());
     }
 
     /**

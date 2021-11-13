@@ -6,8 +6,7 @@ import javax.persistence.*;
 import java.sql.Timestamp;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
-import java.util.Date;
-import java.util.Objects;
+import java.util.*;
 
 /**
  * The Party class
@@ -20,6 +19,7 @@ public class Party {
     @GenericGenerator(name = "native", strategy = "native")
     private int id;
 
+    // Rename user to host?
     @ManyToOne
     private User user;
 
@@ -30,6 +30,14 @@ public class Party {
     private LocalDateTime partyDate;
 
     private String details;
+
+    @ManyToMany(cascade = CascadeType.ALL)
+    @JoinTable(
+            name = "party_user",
+            joinColumns = { @JoinColumn(name = "party_id") },
+            inverseJoinColumns = { @JoinColumn(name = "user_id")}
+    )
+    private Set<User> attendees = new HashSet<>();
 
     /**
      * Instantiates a new Party.
@@ -140,6 +148,24 @@ public class Party {
      */
     public void setDetails(String details) {
         this.details = details;
+    }
+
+    public Set<User> getAttendees() {
+        return attendees;
+    }
+
+    public void setAttendees(Set<User> attendees) {
+        this.attendees = attendees;
+    }
+
+    public void addAttendee(User attendee) {
+        attendees.add(attendee);
+        attendee.getPartiesAttending().add(this);
+    }
+
+    public void removeAttendee(User attendee) {
+        attendees.remove(attendee);
+        attendee.getPartiesAttending().remove(this);
     }
 
     @Override

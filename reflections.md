@@ -169,9 +169,11 @@ originally planned, which puts me a bit further behind where I planned and hoped
 team project and my next weeks will be dedicated to getting back on track in my project and completing the team work. 
 
 ## Week 10
-#### Week of 11/01
+#### Week of 11/01: ?? hrs
 
 Tasks Accomplished:
 + Complete Checkpoint 3
 + Close most issues on GitHub and incorporate feedback
 + Create custom CSS
+
+https://www.baeldung.com/hibernate-many-to-many 

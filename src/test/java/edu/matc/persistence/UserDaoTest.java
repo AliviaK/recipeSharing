@@ -1,11 +1,13 @@
 package edu.matc.persistence;
 
+import edu.matc.entity.Party;
 import edu.matc.entity.Recipe;
 import edu.matc.entity.User;
 import edu.matc.test.util.Database;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import java.time.LocalDateTime;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -86,9 +88,13 @@ class UserDaoTest {
         assertEquals(1, insertedUser.getRecipes().size());
     }
 
-    @Test
+    @Test void insertWithPartyAttendingSuccess() {
+
+    }
+
+    /** @Test
     void deleteSuccess() {
         genericDao.delete(genericDao.getById(1));
         assertNull(genericDao.getById(1));
-    }
+    } */
 }

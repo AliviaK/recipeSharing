@@ -83,8 +83,13 @@ public class PartyDaoTest {
     }
 
     @Test
+    void insertWithAttendeesTest() {
+
+    }
+
+    /** @Test
     void deleteSuccess() {
         genericDao.delete(genericDao.getById(1));
         assertNull(genericDao.getById(1));
-    }
+    } */
 }

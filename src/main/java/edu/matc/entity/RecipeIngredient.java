@@ -22,6 +22,8 @@ public class RecipeIngredient {
 
     private String ingredient;
 
+    private String amount;
+
 
     /**
      * Instantiates a new Recipe ingredient.
@@ -55,6 +57,15 @@ public class RecipeIngredient {
      */
     public void setId(int id) {
         this.id = id;
+    }
+
+
+    public String getAmount() {
+        return amount;
+    }
+
+    public void setAmount(String amount) {
+        this.amount = amount;
     }
 
     /**
@@ -100,6 +111,7 @@ public class RecipeIngredient {
                 "id=" + id +
                 ", recipe=" + recipe +
                 ", ingredient='" + ingredient + '\'' +
+                ", amount='" + amount + '\'' +
                 '}';
     }
 
@@ -108,11 +120,11 @@ public class RecipeIngredient {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         RecipeIngredient that = (RecipeIngredient) o;
-        return id == that.id && Objects.equals(recipe, that.recipe) && Objects.equals(ingredient, that.ingredient);
+        return id == that.id && Objects.equals(ingredient, that.ingredient) && Objects.equals(amount, that.amount);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, recipe, ingredient);
+        return Objects.hash(id, ingredient, amount);
     }
 }

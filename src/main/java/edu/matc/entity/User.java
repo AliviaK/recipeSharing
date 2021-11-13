@@ -3,9 +3,7 @@ package edu.matc.entity;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
-import java.util.HashSet;
-import java.util.Objects;
-import java.util.Set;
+import java.util.*;
 
 /**
  * A class to represent a user.
@@ -35,8 +33,12 @@ public class User {
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
     private Set<Recipe> recipes = new HashSet<>();
 
+    // Rename to parties hosting?
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
     private Set<Party> parties = new HashSet<>();
+
+    @ManyToMany(mappedBy = "attendees")
+    private Set<Party> partiesAttending = new HashSet<>();
 
 
 
@@ -202,6 +204,14 @@ public class User {
     public void removeRecipe(Recipe recipe) {
         recipes.remove(recipe);
         recipe.setUser(null);
+    }
+
+    public Set<Party> getPartiesAttending() {
+        return partiesAttending;
+    }
+
+    public void setPartiesAttending(Set<Party> partiesAttending) {
+        this.partiesAttending = partiesAttending;
     }
 
     /**
