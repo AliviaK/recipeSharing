@@ -3,8 +3,7 @@ package edu.matc.entity;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
-import java.sql.Timestamp;
-import java.time.LocalDate;
+import java.io.Serializable;
 import java.time.LocalDateTime;
 import java.util.*;
 
@@ -13,14 +12,14 @@ import java.util.*;
  */
 @Entity(name = "Party")
 @Table(name = "party")
-public class Party {
+public class Party implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO, generator = "native")
     @GenericGenerator(name = "native", strategy = "native")
     private int id;
 
     // Rename user to host?
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     private User user;
 
     @ManyToOne
@@ -30,14 +29,6 @@ public class Party {
     private LocalDateTime partyDate;
 
     private String details;
-
-    @ManyToMany(cascade = CascadeType.ALL)
-    @JoinTable(
-            name = "party_user",
-            joinColumns = { @JoinColumn(name = "party_id") },
-            inverseJoinColumns = { @JoinColumn(name = "user_id")}
-    )
-    private Set<User> attendees = new HashSet<>();
 
     /**
      * Instantiates a new Party.
@@ -150,23 +141,7 @@ public class Party {
         this.details = details;
     }
 
-    public Set<User> getAttendees() {
-        return attendees;
-    }
 
-    public void setAttendees(Set<User> attendees) {
-        this.attendees = attendees;
-    }
-
-    public void addAttendee(User attendee) {
-        attendees.add(attendee);
-        attendee.getPartiesAttending().add(this);
-    }
-
-    public void removeAttendee(User attendee) {
-        attendees.remove(attendee);
-        attendee.getPartiesAttending().remove(this);
-    }
 
     @Override
     public String toString() {
@@ -184,11 +159,11 @@ public class Party {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Party party = (Party) o;
-        return id == party.id && Objects.equals(user, party.user) && Objects.equals(recipe, party.recipe) && Objects.equals(partyDate, party.partyDate) && Objects.equals(details, party.details);
+        return id == party.id && Objects.equals(partyDate, party.partyDate) && Objects.equals(details, party.details);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, user, recipe, partyDate, details);
+        return Objects.hash(id, partyDate, details);
     }
 }

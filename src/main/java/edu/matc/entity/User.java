@@ -3,6 +3,7 @@ package edu.matc.entity;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.util.*;
 
 /**
@@ -12,7 +13,7 @@ import java.util.*;
  */
 @Entity(name = "User")
 @Table(name = "user")
-public class User {
+public class User implements Serializable {
     @Column(name = "first_name")
     private String firstName;
 
@@ -35,11 +36,7 @@ public class User {
 
     // Rename to parties hosting?
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
-    private Set<Party> parties = new HashSet<>();
-
-    @ManyToMany(mappedBy = "attendees")
-    private Set<Party> partiesAttending = new HashSet<>();
-
+    private Set<Party> partiesHosting = new HashSet<>();
 
 
     /**
@@ -62,6 +59,8 @@ public class User {
         this.userName = userName;
         this.emailAddress = emailAddress;
     }
+
+
 
 
     /**
@@ -173,8 +172,8 @@ public class User {
      *
      * @return the parties
      */
-    public Set<Party> getParties() {
-        return parties;
+    public Set<Party> getPartiesHosting() {
+        return partiesHosting;
     }
 
     /**
@@ -182,8 +181,8 @@ public class User {
      *
      * @param parties the parties
      */
-    public void setParties(Set<Party> parties) {
-        this.parties = parties;
+    public void setPartiesHosting(Set<Party> parties) {
+        this.partiesHosting = parties;
     }
 
     /**
@@ -206,21 +205,13 @@ public class User {
         recipe.setUser(null);
     }
 
-    public Set<Party> getPartiesAttending() {
-        return partiesAttending;
-    }
-
-    public void setPartiesAttending(Set<Party> partiesAttending) {
-        this.partiesAttending = partiesAttending;
-    }
-
     /**
      * Add party.
      *
      * @param party the party
      */
     public void addParty(Party party) {
-        parties.add(party);
+        partiesHosting.add(party);
         party.setUser(this);
     }
 
@@ -230,7 +221,7 @@ public class User {
      * @param party the party
      */
     public void removeParty(Party party) {
-        parties.remove(party);
+        partiesHosting.remove(party);
         party.setUser(null);
     }
 

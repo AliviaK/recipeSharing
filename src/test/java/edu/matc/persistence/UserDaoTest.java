@@ -92,9 +92,11 @@ class UserDaoTest {
 
     }
 
-    /** @Test
+    /** Consider how to delete data w/cascades. DELETE ALL RECIPES? OR MAKE ID NULLABLE?
+    @Test
     void deleteSuccess() {
         genericDao.delete(genericDao.getById(1));
         assertNull(genericDao.getById(1));
-    } */
+    }
+    */
 }
