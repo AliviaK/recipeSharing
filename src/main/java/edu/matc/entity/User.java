@@ -36,11 +36,7 @@ public class User implements Serializable {
 
     // Rename to parties hosting?
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
-    private Set<Party> parties = new HashSet<>();
-
-    @ManyToMany(mappedBy = "attendees")
-    private Set<Party> partiesAttending = new HashSet<>();
-
+    private Set<Party> partiesHosting = new HashSet<>();
 
 
     /**
@@ -63,6 +59,8 @@ public class User implements Serializable {
         this.userName = userName;
         this.emailAddress = emailAddress;
     }
+
+
 
 
     /**
@@ -174,8 +172,8 @@ public class User implements Serializable {
      *
      * @return the parties
      */
-    public Set<Party> getParties() {
-        return parties;
+    public Set<Party> getPartiesHosting() {
+        return partiesHosting;
     }
 
     /**
@@ -183,8 +181,8 @@ public class User implements Serializable {
      *
      * @param parties the parties
      */
-    public void setParties(Set<Party> parties) {
-        this.parties = parties;
+    public void setPartiesHosting(Set<Party> parties) {
+        this.partiesHosting = parties;
     }
 
     /**
@@ -207,21 +205,13 @@ public class User implements Serializable {
         recipe.setUser(null);
     }
 
-    public Set<Party> getPartiesAttending() {
-        return partiesAttending;
-    }
-
-    public void setPartiesAttending(Set<Party> partiesAttending) {
-        this.partiesAttending = partiesAttending;
-    }
-
     /**
      * Add party.
      *
      * @param party the party
      */
     public void addParty(Party party) {
-        parties.add(party);
+        partiesHosting.add(party);
         party.setUser(this);
     }
 
@@ -231,7 +221,7 @@ public class User implements Serializable {
      * @param party the party
      */
     public void removeParty(Party party) {
-        parties.remove(party);
+        partiesHosting.remove(party);
         party.setUser(null);
     }
 
