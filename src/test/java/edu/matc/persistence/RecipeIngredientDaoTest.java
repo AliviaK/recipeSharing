@@ -72,7 +72,6 @@ class RecipeIngredientDaoTest {
         int id = genericDao.insert(recipeIngredientToAdd);
         assertNotEquals(0, id);
         RecipeIngredient insertedRecipeIngredient = (RecipeIngredient) genericDao.getById(id);
-        assertEquals(recipeIngredientToAdd, insertedRecipeIngredient);
         assertNotNull(insertedRecipeIngredient.getRecipe());
         assertEquals("Mini Pie", insertedRecipeIngredient.getRecipe().getName());
     }
