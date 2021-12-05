@@ -63,6 +63,9 @@
                     <li class="nav-item">
                         <a href="addRecipe.jsp" class="nav-link link-dark m-2 fw-bold">Add Recipe</a>
                     </li>
+                    <li class="nav-item">
+                        <a href="viewParties.jsp" class="nav-link link-dark m-2 fw-bold">View My Parties</a>
+                    </li>
                 </ul>
             </div>
         </div>

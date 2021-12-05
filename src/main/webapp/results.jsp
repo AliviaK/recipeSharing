@@ -20,6 +20,12 @@
                 <td>
                     <c:forEach var="recipe" items="${user.recipes}">
                        ${recipe.id} ${recipe.name}
+                        <c:forEach var="ingredient" items="${recipe.recipeIngredients}">
+                            ${ingredient.ingredient} ${ingredient.amount}
+                        </c:forEach>
+                        <c:forEach var="step" items="${recipe.recipeSteps}">
+                            ${step.orderNumber}. ${step.direction};
+                        </c:forEach>
                     </c:forEach>
                 </td>
             </tr>

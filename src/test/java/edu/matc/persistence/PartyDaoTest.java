@@ -77,7 +77,6 @@ public class PartyDaoTest {
         int id = genericDao.insert(partyToAdd);
         assertNotEquals(0, id);
         Party insertedParty = (Party) genericDao.getById(id);
-        assertEquals(partyToAdd, insertedParty);
         assertNotNull(insertedParty.getUser());
         assertEquals("Shirley", insertedParty.getUser().getFirstName());
     }

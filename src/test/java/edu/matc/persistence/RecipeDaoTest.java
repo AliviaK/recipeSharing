@@ -76,7 +76,8 @@ class RecipeDaoTest {
         assertEquals("Shirley", insertedRecipe.getUser().getFirstName());
     }
 
-    /** @Test
+    /** Delete recipe and delete ingredients
+    @Test
     void deleteSuccess() {
         genericDao.delete(genericDao.getById(1));
         assertNull(genericDao.getById(1));

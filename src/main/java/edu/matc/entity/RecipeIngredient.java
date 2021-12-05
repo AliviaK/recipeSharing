@@ -3,6 +3,7 @@ package edu.matc.entity;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.util.Objects;
 
 /**
@@ -10,7 +11,7 @@ import java.util.Objects;
  */
 @Entity(name = "RecipeIngredient")
 @Table(name = "recipe_ingredient")
-public class RecipeIngredient {
+public class RecipeIngredient implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO, generator = "native")
@@ -120,11 +121,11 @@ public class RecipeIngredient {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         RecipeIngredient that = (RecipeIngredient) o;
-        return id == that.id && Objects.equals(ingredient, that.ingredient) && Objects.equals(amount, that.amount);
+        return id == that.id && Objects.equals(recipe, that.recipe) && Objects.equals(ingredient, that.ingredient) && Objects.equals(amount, that.amount);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, ingredient, amount);
+        return Objects.hash(id, recipe, ingredient, amount);
     }
 }
