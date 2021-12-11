@@ -1,7 +1,9 @@
 package edu.matc.controller;
 
 import edu.matc.entity.Recipe;
+import edu.matc.entity.User;
 import edu.matc.persistence.GenericDao;
+import edu.matc.util.DaoFactory;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -17,18 +19,19 @@ import java.io.IOException;
         urlPatterns = {"/addRecipe"}
 )
 public class AddRecipe extends HttpServlet {
+    GenericDao recipeDao;
     private final Logger logger = LogManager.getLogger(this.getClass());
 
     @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        GenericDao recipeDao = new GenericDao(Recipe.class);
-        if (req.getParameter("submit").equals("searchRecipe")) {
-            req.setAttribute("recipes", recipeDao.getByPropertyLike("name", req.getParameter("searchTermRecipe"), "Recipe"));
-            logger.debug(req.getParameter("name"));
-        } else {
-            req.setAttribute("recipes", recipeDao.getAll());
-        }
-        RequestDispatcher dispatcher = req.getRequestDispatcher("/addSuccess.jsp");
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        recipeDao = DaoFactory.createDao(Recipe.class);
+
+        String name = req.getParameter("name");
+        String notes = req.getParameter("notes");
+        User user = new User();
+
+
+        RequestDispatcher dispatcher = req.getRequestDispatcher("/viewProfile.jsp");
         dispatcher.forward(req, resp);
     }
 }

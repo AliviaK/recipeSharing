@@ -5,12 +5,16 @@
 </header>
 
 <form action="addRecipe" class="w-75 mx-auto">
-    <div class="row m-3">
+    <div class="row m-3 align-items-end">
         <div class="form-group col-6">
             <label for="name">Recipe Name: </label>
             <input type="text" class="form-control" id="name" name="name" class="name" placeholder="Recipe Name">
         </div>
-        <div class="form-group col-6">
+        <div class="form-check col-6">
+            <input class="form-check-input" type="checkbox" value="" id="isPublic" checked>
+            <label class="form-check-label" for="isPublic">Make Recipe Public </label>
+        </div>
+        <div class="form-group col-12">
             <label for="notes">Description: </label>
             <input type="text" class="form-control" id="notes" name="notes" class="notes" maxlength="100"
                    placeholder="Add a short description about your recipe">
