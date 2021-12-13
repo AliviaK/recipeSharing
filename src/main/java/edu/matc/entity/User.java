@@ -34,7 +34,7 @@ public class User implements Serializable {
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
     private Set<Recipe> recipes = new HashSet<>();
 
-    // Rename to parties hosting?
+    // TODO: Rename to parties hosting?
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
     private Set<Party> partiesHosting = new HashSet<>();
 
@@ -43,6 +43,31 @@ public class User implements Serializable {
      * Instantiates a new User.
      */
     public User() {
+    }
+
+
+    /**
+     * Instantiates a new User with only username and email provided.
+     *
+     * @param userName     the user name
+     * @param emailAddress the email address
+     */
+    public User(String userName, String emailAddress) {
+        this.userName = userName;
+        this.emailAddress = emailAddress;
+    }
+
+    /**
+     * Instantiates a new User.
+     *
+     * @param firstName    the first name
+     * @param userName     the username
+     * @param emailAddress the email address
+     */
+    public User(String firstName, String userName, String emailAddress) {
+        this.firstName = firstName;
+        this.userName = userName;
+        this.emailAddress = emailAddress;
     }
 
     /**
@@ -228,11 +253,11 @@ public class User implements Serializable {
     @Override
     public String toString() {
         return "User{" +
-                "firstName='" + firstName + '\'' +
-                ", lastName='" + lastName + '\'' +
-                ", userName='" + userName + '\'' +
-                ", id=" + id +
-                ", emailAddress" + emailAddress +
+                "firstName= '" + firstName + '\'' +
+                ", lastName= '" + lastName + '\'' +
+                ", userName= '" + userName + '\'' +
+                ", id= '" + id + '\'' +
+                ", emailAddress= '" + emailAddress + '\'' +
                 '}';
     }
 
@@ -241,8 +266,7 @@ public class User implements Serializable {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         User user = (User) o;
-        return id == user.id && Objects.equals(firstName, user.firstName) && Objects.equals(lastName, user.lastName) &&
-                userName.equals(user.userName) && emailAddress.equals(user.emailAddress);
+        return id == user.id && Objects.equals(firstName, user.firstName) && Objects.equals(lastName, user.lastName) && userName.equals(user.userName) && emailAddress.equals(user.emailAddress);
     }
 
     @Override

@@ -47,8 +47,17 @@ class UserDaoTest {
      * Verifies all users are correctly returned based on criteria
      */
     @Test
-    void getByPropertyLikeSuccess() {
+    void getByPropertyLikeLastNameSuccess() {
         List<User> users = genericDao.getByPropertyLike("lastName", "ben", "User");
+        assertEquals(1, users.size());
+    }
+
+    /**
+     * Verifies all users are correctly returned based on criteria
+     */
+    @Test
+    void getByPropertyLikeUserNameSuccess() {
+        List<User> users = genericDao.getByPropertyLike("userName", "jwing");
         assertEquals(1, users.size());
     }
 
@@ -68,6 +77,16 @@ class UserDaoTest {
         int id = genericDao.insert(userToAdd);
         assertNotEquals(0, id);
         User insertedUser = (User) genericDao.getById(id);
+        assertEquals(userToAdd, insertedUser);
+    }
+
+    @Test
+    void insertWithEmailUsernameSuccess() {
+        User userToAdd = new User("TrinketAndBella", "tandb@greendalecollege.edu");
+        int id = genericDao.insert(userToAdd);
+        assertNotEquals(0, id);
+        User insertedUser = (User) genericDao.getById(id);
+        System.out.println(insertedUser);
         assertEquals(userToAdd, insertedUser);
     }
 

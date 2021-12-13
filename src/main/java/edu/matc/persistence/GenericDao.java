@@ -84,12 +84,50 @@ public class GenericDao<T> {
     }
 
     /**
+     * Get user by property (exact match)
+     */
+    public List<T> getByPropertyEqual(String propertyName, String value) {
+        Session session = getSession();
+
+        logger.debug("Searching for " + type + " with " + propertyName + " = " + value);
+
+        CriteriaBuilder builder = session.getCriteriaBuilder();
+        CriteriaQuery<T> query = builder.createQuery(type);
+        Root<T> root = query.from(type);
+        query.select(root).where(builder.equal(root.get(propertyName), value));
+        List<T> entities = session.createQuery( query ).getResultList();
+
+        session.close();
+        return entities;
+    }
+
+    /**
      * Get recipe by property (like)
      */
     public List<T> getByPropertyLike(String propertyName, String value, T entity) {
         Session session = getSession();
 
         logger.debug("Searching for " + entity + " with {} = {}",  propertyName, value);
+
+        CriteriaBuilder builder = session.getCriteriaBuilder();
+        CriteriaQuery<T> query = builder.createQuery(type);
+        Root<T> root = query.from(type);
+        Expression<String> propertyPath = root.get(propertyName);
+
+        query.where(builder.like(propertyPath, "%" + value + "%"));
+
+        List<T> entities = session.createQuery( query ).getResultList();
+        session.close();
+        return entities;
+    }
+
+    /**
+     * Get recipe by property (like)
+     */
+    public List<T> getByPropertyLike(String propertyName, String value) {
+        Session session = getSession();
+
+        logger.debug("Searching for " + type + " with {} = {}",  propertyName, value);
 
         CriteriaBuilder builder = session.getCriteriaBuilder();
         CriteriaQuery<T> query = builder.createQuery(type);

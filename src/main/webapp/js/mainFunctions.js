@@ -67,7 +67,7 @@ const processAddIngredientClick = () => {
     document.getElementById("amountDiv" + ingredienti).appendChild(labelForAmount);
     document.getElementById("amountDiv" + ingredienti).appendChild(amountInput);
 
-    i++;
+    ingredienti++;
 }
 
 /**
@@ -118,7 +118,7 @@ const processAddStepClick = () => {
     document.getElementById("stepDiv" + stepi).appendChild(labelForDirection);
     document.getElementById("stepDiv" + stepi).appendChild(directionInput);
 
-    i++;
+    stepi++;
 }
 
 
