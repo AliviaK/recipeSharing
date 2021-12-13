@@ -209,6 +209,52 @@ to be capable of.
 
 Tasks Accomplished:
 + Solve UserDao test failures
++ Create new JSPs for viewing parties
++ Redeploy to AWS
 
 I started this week thinking about the big tasks that have been my blockers, and I broke them out into some starting 
-points and created issues on GitHub for these. I started with the UserDao test failures.
+points and created issues on GitHub for these. I started with the UserDao test failures. I spent a lot of time looking 
+into APIs and best practices on delivering database information, and I think I continue to get hung up on how to proceed
+because I want to choose the most efficient way of delivering my database info. I know at this time there won't be a 
+large set of recipes to get back so speed shouldn't be an issue from database retrieval.
+
+I created issues on GitHub addressing points I want and need to solve to complete my app, and will be creating branches 
+to address and close these issues.
+
+## Week 14
+### Week of 11/29
+
+Tasks Accomplished: 
++ Complete Peer Review 2
++ Progress Login and Logout Capabilities
++ Add to JavaScript and Controller of Add Recipe
++ Rework Database
++ Clean up files
++ Create new JSPs
++ Redeploy to AWS
+
+This week I spent a lot of time making a lot of decisions for final product and how to deliver my MVP, as time was 
+coming to an end. I completed my second peer review which put into perspective how much more progress I needed to make
+in the coming days. Once again this week I spent many hours researching how I would like to implement, watching LinkedIn
+Learning videos and YouTube videos on web app structure.
+
+## Week 15
+### Week of 12/5
+
+Tasks Accomplished:
++ Catch up on reflections and MVP
++ Revise and update project plan and checkpoints
++ Finish JavaScript and Add Recipe Form
++ Redeploy to AWS
++ Reconnect to Database and confirm insertion of users
+
+This week I spent more time on the visuals of the website and planning how to validate parties and users.
+
+## Week 16
+### Week of 12/12
+
+Tasks Accomplished:
++ Complete Login/Logout
++ Clean up and update documentation and project files
+
+I connected the username to the session and disconnected upon logout, hiding applicable pages from nav once logged out.
