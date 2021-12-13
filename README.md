@@ -28,12 +28,19 @@ like to share their recipe publicly.
     + IntelliJ IDEA
 + Unit Testing
     + JUnit
++ Logging
+    + Log4J2
 + Web Hosting
     + AWS w/ Elastic Beanstalk
++ Authentication
+    + Amazon Cognito
++ ORM Framework
+    + Hibernate 5
 + Style Framework
     + Bootstrap 5
-+ Email API
-    + JavaMail
++ Web Service Consumed
+    + JavaMail Email API
+
 ### Design
 + [User Stories](userStories.md)
 + [Screen Design](screenDesign.md)
