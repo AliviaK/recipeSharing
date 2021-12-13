@@ -10,17 +10,22 @@ import edu.matc.auth.CognitoTokenHeader;
 import edu.matc.auth.Keys;
 import edu.matc.auth.KeysItem;
 import edu.matc.auth.TokenResponse;
+import edu.matc.entity.User;
+import edu.matc.persistence.GenericDao;
+import edu.matc.util.DaoFactory;
 import edu.matc.util.PropertiesLoader;
 import org.apache.commons.io.FileUtils;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.File;
 import java.io.IOException;
 import java.math.BigInteger;
@@ -39,6 +44,7 @@ import java.security.spec.InvalidKeySpecException;
 import java.security.spec.RSAPublicKeySpec;
 import java.util.Base64;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Properties;
 import java.util.stream.Collectors;
 
@@ -83,6 +89,7 @@ public class Auth extends HttpServlet implements PropertiesLoader {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String authCode = req.getParameter("code");
         String userName = null;
+        HttpSession session = req.getSession();
 
         if (authCode == null) {
             //TODO forward to an error page or back to the login
@@ -92,6 +99,7 @@ public class Auth extends HttpServlet implements PropertiesLoader {
                 TokenResponse tokenResponse = getToken(authRequest);
                 userName = validate(tokenResponse);
                 req.setAttribute("userName", userName);
+                session.setAttribute("userName", userName);
             } catch (IOException e) {
                 logger.error("Error getting or validating the token: " + e.getMessage(), e);
                 //TODO forward to an error page
@@ -145,7 +153,6 @@ public class Auth extends HttpServlet implements PropertiesLoader {
         String keyId = tokenHeader.getKid();
         String alg = tokenHeader.getAlg();
 
-        // todo pick proper key from the two - it just so happens that the first one works for my case
         // Use Key's N and E
         BigInteger modulus = new BigInteger(1, org.apache.commons.codec.binary.Base64.decodeBase64(jwks.getKeys().get(0).getN()));
         BigInteger exponent = new BigInteger(1, org.apache.commons.codec.binary.Base64.decodeBase64(jwks.getKeys().get(0).getE()));
@@ -175,13 +182,28 @@ public class Auth extends HttpServlet implements PropertiesLoader {
         // Verify the token
         DecodedJWT jwt = verifier.verify(tokenResponse.getIdToken());
         String userName = jwt.getClaim("cognito:username").asString();
+        String emailAddress = jwt.getClaim("email").asString();
+        String name = jwt.getClaim("name").asString();
         logger.debug("here's the username: " + userName);
 
         logger.debug("here are all the available claims: " + jwt.getClaims());
 
-        // TODO decide what you want to do with the info!
-        // for now, I'm just returning username for display back to the browser
-        // store in session? get email
+        // Add user to database if not there
+        GenericDao dao = DaoFactory.createDao(User.class);
+        List<User> users = dao.getByPropertyEqual("userName", userName);
+
+        if (users.isEmpty()) {
+            User user;
+
+            // Check if name was supplied
+            if (name != null && !name.isEmpty()) {
+                user = new User(name, userName, emailAddress);
+            } else {
+                user = new User(userName, emailAddress);
+            }
+            dao.insert(user);
+        }
+
         return userName;
     }
 
