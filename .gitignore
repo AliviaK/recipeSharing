@@ -16,7 +16,7 @@
 .idea/dynamic.xml
 .idea/uiDesigner.xml
 recipeSharing.properties
-
+javamail.properties
 # Gradle:
 .idea/gradle.xml
 .idea/libraries

@@ -38,7 +38,7 @@ class RecipeStepDaoTest {
     @Test
     void getAllSuccess() {
         List<RecipeStep> recipes = genericDao.getAll();
-        assertEquals(5, recipes.size());
+        assertEquals(8, recipes.size());
     }
 
     /**
@@ -47,7 +47,7 @@ class RecipeStepDaoTest {
     @Test
     void getByPropertyLikeSuccess() {
         List<RecipeStep> steps = genericDao.getByPropertyLike("direction", "mix", "RecipeStep");
-        assertEquals(1, steps.size());
+        assertEquals(2, steps.size());
     }
 
     @Test

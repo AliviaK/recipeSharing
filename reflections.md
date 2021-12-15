@@ -232,11 +232,17 @@ Tasks Accomplished:
 + Clean up files
 + Create new JSPs
 + Redeploy to AWS
++ Create gmail for JavaMail
 
 This week I spent a lot of time making a lot of decisions for final product and how to deliver my MVP, as time was 
 coming to an end. I completed my second peer review which put into perspective how much more progress I needed to make
 in the coming days. Once again this week I spent many hours researching how I would like to implement, watching LinkedIn
 Learning videos and YouTube videos on web app structure.
+Going between JavaMail FAQ and this walkthrough helped me draft the JavaMail sending class: 
+https://www.javatpoint.com/sending-email-through-java-mail-api-in-servlet
+I decided on the smtp route and have stored my info in properties files.
+I kept running into an issue of gmail rejecting my email or saying it was a security issue, so I had to allow less secure
+apps to access the gmail account I created for my site. 
 
 ## Week 15
 ### Week of 12/5
@@ -248,7 +254,9 @@ Tasks Accomplished:
 + Redeploy to AWS
 + Reconnect to Database and confirm insertion of users
 
-This week I spent more time on the visuals of the website and planning how to validate parties and users.
+This week I spent more time on the visuals of the website and planning how to validate parties and users. I have some
+form validation for recipe inputs, and spent time editing the database to allow for longer varchars. Many hours were 
+spent working with Hibernate to get to delete various objects and troubleshoot why I cannot.
 
 ## Week 16
 ### Week of 12/12
@@ -256,5 +264,10 @@ This week I spent more time on the visuals of the website and planning how to va
 Tasks Accomplished:
 + Complete Login/Logout
 + Clean up and update documentation and project files
++ Add JavaMail to send party invite
 
 I connected the username to the session and disconnected upon logout, hiding applicable pages from nav once logged out.
+When connecting the doPost method for inserting recipes, I looked back on Advanced Java's project 4 to remember servlet
+redirects and forwarding, which helped me for implementing JavaMail. I watched this tutorial video for assistance with
+JavaMail servlet: https://www.youtube.com/watch?v=gy2eEZhLihk
+This was necessary for sending an email: https://kinsta.com/blog/gmail-smtp-server/

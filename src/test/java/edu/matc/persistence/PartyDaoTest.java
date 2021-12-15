@@ -86,7 +86,7 @@ public class PartyDaoTest {
 
     }
 
-    /** TODO Delete user
+    /**
     @Test
     void deleteSuccess() {
         genericDao.delete(genericDao.getById(1));

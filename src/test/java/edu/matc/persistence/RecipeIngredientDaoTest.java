@@ -4,6 +4,9 @@ import edu.matc.entity.Recipe;
 import edu.matc.entity.RecipeIngredient;
 import edu.matc.entity.User;
 import edu.matc.test.util.Database;
+import edu.matc.util.DaoFactory;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -13,14 +16,15 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class RecipeIngredientDaoTest {
 
-    GenericDao genericDao;
+    GenericDao ingredientDao;
+    private final Logger logger = LogManager.getLogger(this.getClass());
 
     @BeforeEach
     void setUp() {
         Database database = Database.getInstance();
         database.runSQL("cleandb.sql");
 
-        genericDao = new GenericDao(RecipeIngredient.class);
+        ingredientDao = DaoFactory.createDao(RecipeIngredient.class);
     }
 
     /**
@@ -28,7 +32,7 @@ class RecipeIngredientDaoTest {
      */
     @Test
     void getByIdSuccess() {
-        RecipeIngredient retrievedRecipe = (RecipeIngredient) genericDao.getById(3);
+        RecipeIngredient retrievedRecipe = (RecipeIngredient) ingredientDao.getById(3);
         assertNotNull(retrievedRecipe);
         assertEquals("Coconut Oil", retrievedRecipe.getIngredient());
     }
@@ -38,8 +42,8 @@ class RecipeIngredientDaoTest {
      */
     @Test
     void getAllSuccess() {
-        List<RecipeIngredient> recipes = genericDao.getAll();
-        assertEquals(3, recipes.size());
+        List<RecipeIngredient> recipes = ingredientDao.getAll();
+        assertEquals(6, recipes.size());
     }
 
     /**
@@ -47,17 +51,17 @@ class RecipeIngredientDaoTest {
      */
     @Test
     void getByPropertyLikeSuccess() {
-        List<RecipeIngredient> recipes = genericDao.getByPropertyLike("ingredient", "o", "RecipeIngredient");
-        assertEquals(3, recipes.size());
+        List<RecipeIngredient> recipes = ingredientDao.getByPropertyLike("ingredient", "o", "RecipeIngredient");
+        assertEquals(6, recipes.size());
     }
 
     @Test
     void saveOrUpdateSuccess() {
         String newIngredient = "Butterscotch";
-        RecipeIngredient recipeIngredientToUpdate = (RecipeIngredient) genericDao.getById(2);
+        RecipeIngredient recipeIngredientToUpdate = (RecipeIngredient) ingredientDao.getById(2);
         recipeIngredientToUpdate.setIngredient(newIngredient);
-        genericDao.saveOrUpdate(recipeIngredientToUpdate);
-        RecipeIngredient retrievedRecipeIngredient = (RecipeIngredient) genericDao.getById(2);
+        ingredientDao.saveOrUpdate(recipeIngredientToUpdate);
+        RecipeIngredient retrievedRecipeIngredient = (RecipeIngredient) ingredientDao.getById(2);
         assertEquals(newIngredient, retrievedRecipeIngredient.getIngredient());
     }
 
@@ -69,16 +73,18 @@ class RecipeIngredientDaoTest {
         RecipeIngredient recipeIngredientToAdd = new RecipeIngredient(recipe, "Honey", "2 cups");
         recipe.addRecipeIngredient(recipeIngredientToAdd);
 
-        int id = genericDao.insert(recipeIngredientToAdd);
+        int id = ingredientDao.insert(recipeIngredientToAdd);
         assertNotEquals(0, id);
-        RecipeIngredient insertedRecipeIngredient = (RecipeIngredient) genericDao.getById(id);
+        RecipeIngredient insertedRecipeIngredient = (RecipeIngredient) ingredientDao.getById(id);
         assertNotNull(insertedRecipeIngredient.getRecipe());
         assertEquals("Mini Pie", insertedRecipeIngredient.getRecipe().getName());
     }
 
     @Test
     void deleteSuccess() {
-        genericDao.delete(genericDao.getById(1));
-        assertNull(genericDao.getById(1));
+        RecipeIngredient ing = (RecipeIngredient) ingredientDao.getById(1);
+        ingredientDao.delete(ing);
+        assertNull(ingredientDao.getById(1));
+        logger.info(ingredientDao.getById(1));
     }
 }

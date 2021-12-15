@@ -21,7 +21,7 @@ public class Party implements Serializable {
     private int id;
 
     // Rename user to host?
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.EAGER)
     private User user;
 
     @ManyToOne

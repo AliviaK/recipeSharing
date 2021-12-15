@@ -32,5 +32,9 @@
     </div>
 </section>
 
+<p>${emailSent}</p>
+<c:remove var="emailSent" scope="session" />
+
+<%@include file="sendPartyInvite.jsp"%>
 
 <%@include file="footer.jsp"%>
