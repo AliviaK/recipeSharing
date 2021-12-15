@@ -20,4 +20,8 @@
     </div>
 </form>
 
+<c:if test="${!empty recipes}">
+    <%@include file="searchedRecipes.jsp"%>
+</c:if>
+
 <%@include file="footer.jsp"%>
