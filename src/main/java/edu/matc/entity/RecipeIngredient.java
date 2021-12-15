@@ -37,9 +37,10 @@ public class RecipeIngredient implements Serializable {
      * @param recipe     the recipe
      * @param ingredient the ingredient
      */
-    public RecipeIngredient(Recipe recipe, String ingredient) {
+    public RecipeIngredient(Recipe recipe, String ingredient, String amount) {
         this.recipe = recipe;
         this.ingredient = ingredient;
+        this.amount = amount;
     }
 
     /**
@@ -110,10 +111,8 @@ public class RecipeIngredient implements Serializable {
     public String toString() {
         return "RecipeIngredient{" +
                 "id=" + id +
-                ", recipe=" + recipe +
                 ", ingredient='" + ingredient + '\'' +
-                ", amount='" + amount + '\'' +
-                '}';
+                ", amount='" + amount + '}';
     }
 
     @Override
@@ -121,11 +120,11 @@ public class RecipeIngredient implements Serializable {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         RecipeIngredient that = (RecipeIngredient) o;
-        return id == that.id && Objects.equals(recipe, that.recipe) && Objects.equals(ingredient, that.ingredient) && Objects.equals(amount, that.amount);
+        return id == that.id && ingredient.equals(that.ingredient) && amount.equals(that.amount);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, recipe, ingredient, amount);
+        return Objects.hash(id, ingredient, amount);
     }
 }

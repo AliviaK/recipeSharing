@@ -15,7 +15,6 @@ public class UserResource {
     @GET
     @Produces(MediaType.APPLICATION_JSON)
     public List<User> list() {
-
         GenericDao dao = DaoFactory.createDao(User.class);
         return (List<User>) dao.getAll();
     }

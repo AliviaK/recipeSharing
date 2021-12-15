@@ -41,6 +41,9 @@
 
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a href="index.jsp" class="nav-link link-dark m-2 fw-bold">Home</a>
+                    </li>
                     <c:choose>
                         <c:when test="${empty userName}">
                             <li class="nav-item">
@@ -48,27 +51,21 @@
                             </li>
                         </c:when>
                         <c:otherwise>
-                            <h3 class="nav-item">Welcome ${userName}</h3>
+                            <li>Welcome ${userName}</li>
                             <li class="nav-item">
-                                <a href="viewProfile.jsp" class="nav-link link-dark m-2 fw-bold">Profile</a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="addRecipe.jsp" class="nav-link link-dark m-2 fw-bold">Add Recipe</a>
+                                <a href="viewProfile" class="nav-link link-dark m-2 fw-bold">Profile</a>
                             </li>
                             <li class="nav-item">
                                 <a href="viewParties.jsp" class="nav-link link-dark m-2 fw-bold">View My Parties</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="addRecipe.jsp" class="nav-link link-dark m-2 fw-bold">Add Recipe</a>
                             </li>
                             <li class="nav-item">
                                 <a href="logOut" class="nav-link link-dark m-2 fw-bold">Log Out</a>
                             </li>
                         </c:otherwise>
                     </c:choose>
-                    <li class="nav-item">
-                        <a href="index.jsp" class="nav-link link-dark m-2 fw-bold">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="recipeSearch.jsp" class="nav-link link-dark m-2 fw-bold">Recipe Search</a>
-                    </li>
                 </ul>
             </div>
         </div>
