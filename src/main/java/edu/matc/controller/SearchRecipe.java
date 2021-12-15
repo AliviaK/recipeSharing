@@ -30,7 +30,7 @@ public class SearchRecipe extends HttpServlet {
         } else {
             req.setAttribute("recipes", recipeDao.getAll());
         }
-        RequestDispatcher dispatcher = req.getRequestDispatcher("/searchedRecipes.jsp");
+        RequestDispatcher dispatcher = req.getRequestDispatcher("/index.jsp");
         dispatcher.forward(req, resp);
     }
 }
