@@ -169,11 +169,92 @@ originally planned, which puts me a bit further behind where I planned and hoped
 team project and my next weeks will be dedicated to getting back on track in my project and completing the team work. 
 
 ## Week 10
-#### Week of 11/01: ?? hrs
+#### Week of 11/01: 6 hrs
 
 Tasks Accomplished:
 + Complete Checkpoint 3
 + Close most issues on GitHub and incorporate feedback
 + Create custom CSS
 
+I incorporated the feedback from GitHub into my project and closed almost all issues, and made plans to incorporate 
+those needed changes in the future. I spent a lot of time updating the style and creating a logo. Seeing the new color 
+scheme is exciting. The login is working and I now have to save the login info for user access capabilities.
 https://www.baeldung.com/hibernate-many-to-many 
+
+## Week 11
+### Week of 11/08: 4 hrs
+
+Tasks Accomplished:
++ Create and fix info on JSPs
++ Progress ManyToMany PartyUsers Entity
+
+I am running into new issues as I progress my database and continue to struggle with finding additional time to work on 
+this project because all my time is on the team project this week. I wanted to store ingredients and measurements as 
+separate cells for better display and to require users to insert a measurement.
+
+## Week 12
+### Week of 11/15: 5 hrs
+
+Tasks Accomplished:
++ Rework PartyUser table
++ Rework Hibernate entities
++ Progress Insert Recipe
+
+Most of this week was dedicated again to the team project. But I did progress the PartyUsers object and tried out 
+several methods for annotating the PartyUsers, but it's lead to me needing to think more thoroughly about what I want it 
+to be capable of.
+
+## Week 13
+### Week of 11/22
+
+Tasks Accomplished:
++ Solve UserDao test failures
++ Create new JSPs for viewing parties
++ Redeploy to AWS
+
+I started this week thinking about the big tasks that have been my blockers, and I broke them out into some starting 
+points and created issues on GitHub for these. I started with the UserDao test failures. I spent a lot of time looking 
+into APIs and best practices on delivering database information, and I think I continue to get hung up on how to proceed
+because I want to choose the most efficient way of delivering my database info. I know at this time there won't be a 
+large set of recipes to get back so speed shouldn't be an issue from database retrieval.
+
+I created issues on GitHub addressing points I want and need to solve to complete my app, and will be creating branches 
+to address and close these issues.
+
+## Week 14
+### Week of 11/29
+
+Tasks Accomplished: 
++ Complete Peer Review 2
++ Progress Login and Logout Capabilities
++ Add to JavaScript and Controller of Add Recipe
++ Rework Database
++ Clean up files
++ Create new JSPs
++ Redeploy to AWS
+
+This week I spent a lot of time making a lot of decisions for final product and how to deliver my MVP, as time was 
+coming to an end. I completed my second peer review which put into perspective how much more progress I needed to make
+in the coming days. Once again this week I spent many hours researching how I would like to implement, watching LinkedIn
+Learning videos and YouTube videos on web app structure.
+
+## Week 15
+### Week of 12/5
+
+Tasks Accomplished:
++ Catch up on reflections and MVP
++ Revise and update project plan and checkpoints
++ Finish JavaScript and Add Recipe Form
++ Redeploy to AWS
++ Reconnect to Database and confirm insertion of users
+
+This week I spent more time on the visuals of the website and planning how to validate parties and users.
+
+## Week 16
+### Week of 12/12
+
+Tasks Accomplished:
++ Complete Login/Logout
++ Clean up and update documentation and project files
+
+I connected the username to the session and disconnected upon logout, hiding applicable pages from nav once logged out.

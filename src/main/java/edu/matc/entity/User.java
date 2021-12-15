@@ -34,19 +34,39 @@ public class User implements Serializable {
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
     private Set<Recipe> recipes = new HashSet<>();
 
-    // Rename to parties hosting?
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
-    private Set<Party> parties = new HashSet<>();
-
-    @ManyToMany(mappedBy = "attendees")
-    private Set<Party> partiesAttending = new HashSet<>();
-
+    private Set<Party> partiesHosting = new HashSet<>();
 
 
     /**
      * Instantiates a new User.
      */
     public User() {
+    }
+
+
+    /**
+     * Instantiates a new User with only username and email provided.
+     *
+     * @param userName     the user name
+     * @param emailAddress the email address
+     */
+    public User(String userName, String emailAddress) {
+        this.userName = userName;
+        this.emailAddress = emailAddress;
+    }
+
+    /**
+     * Instantiates a new User.
+     *
+     * @param firstName    the first name
+     * @param userName     the username
+     * @param emailAddress the email address
+     */
+    public User(String firstName, String userName, String emailAddress) {
+        this.firstName = firstName;
+        this.userName = userName;
+        this.emailAddress = emailAddress;
     }
 
     /**
@@ -63,6 +83,8 @@ public class User implements Serializable {
         this.userName = userName;
         this.emailAddress = emailAddress;
     }
+
+
 
 
     /**
@@ -174,8 +196,8 @@ public class User implements Serializable {
      *
      * @return the parties
      */
-    public Set<Party> getParties() {
-        return parties;
+    public Set<Party> getPartiesHosting() {
+        return partiesHosting;
     }
 
     /**
@@ -183,8 +205,8 @@ public class User implements Serializable {
      *
      * @param parties the parties
      */
-    public void setParties(Set<Party> parties) {
-        this.parties = parties;
+    public void setPartiesHosting(Set<Party> parties) {
+        this.partiesHosting = parties;
     }
 
     /**
@@ -207,21 +229,13 @@ public class User implements Serializable {
         recipe.setUser(null);
     }
 
-    public Set<Party> getPartiesAttending() {
-        return partiesAttending;
-    }
-
-    public void setPartiesAttending(Set<Party> partiesAttending) {
-        this.partiesAttending = partiesAttending;
-    }
-
     /**
      * Add party.
      *
      * @param party the party
      */
     public void addParty(Party party) {
-        parties.add(party);
+        partiesHosting.add(party);
         party.setUser(this);
     }
 
@@ -231,18 +245,18 @@ public class User implements Serializable {
      * @param party the party
      */
     public void removeParty(Party party) {
-        parties.remove(party);
+        partiesHosting.remove(party);
         party.setUser(null);
     }
 
     @Override
     public String toString() {
         return "User{" +
-                "firstName='" + firstName + '\'' +
-                ", lastName='" + lastName + '\'' +
-                ", userName='" + userName + '\'' +
-                ", id=" + id +
-                ", emailAddress" + emailAddress +
+                "firstName= '" + firstName + '\'' +
+                ", lastName= '" + lastName + '\'' +
+                ", userName= '" + userName + '\'' +
+                ", id= '" + id + '\'' +
+                ", emailAddress= '" + emailAddress + '\'' +
                 '}';
     }
 
@@ -251,8 +265,7 @@ public class User implements Serializable {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         User user = (User) o;
-        return id == user.id && Objects.equals(firstName, user.firstName) && Objects.equals(lastName, user.lastName) &&
-                userName.equals(user.userName) && emailAddress.equals(user.emailAddress);
+        return id == user.id && Objects.equals(firstName, user.firstName) && Objects.equals(lastName, user.lastName) && userName.equals(user.userName) && emailAddress.equals(user.emailAddress);
     }
 
     @Override

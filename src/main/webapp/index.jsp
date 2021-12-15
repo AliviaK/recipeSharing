@@ -4,7 +4,7 @@
     <h1>Popular Recipes: </h1>
 </header>
 
-<form action="searchRecipe" class="form-inline">
+<form method="get" action="searchRecipe" class="form-inline">
     <div class="row align-items-end">
         <div class="col form-group font-weight-bold">
             <label for="searchTermRecipe">Search</label>

@@ -1,6 +1,6 @@
 package edu.matc.controller;
 
-import edu.matc.entity.Recipe;
+
 import edu.matc.entity.User;
 import edu.matc.persistence.GenericDao;
 import edu.matc.util.DaoFactory;
@@ -13,24 +13,26 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.IOException;
-@WebServlet(
-        urlPatterns = {"/searchRecipe"}
-)
+import java.util.List;
 
-public class SearchRecipe extends HttpServlet {
+@WebServlet(
+        urlPatterns = {"/viewProfile"}
+)
+public class ViewProfile extends HttpServlet {
     private final Logger logger = LogManager.getLogger(this.getClass());
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        GenericDao recipeDao = DaoFactory.createDao(Recipe.class);
-        if (req.getParameter("submit").equals("searchRecipe")) {
-            req.setAttribute("recipes", recipeDao.getByPropertyLike("name", req.getParameter("searchTermRecipe"), "Recipe"));
-            logger.debug(req.getParameter("name"));
-        } else {
-            req.setAttribute("recipes", recipeDao.getAll());
-        }
-        RequestDispatcher dispatcher = req.getRequestDispatcher("/index.jsp");
+        GenericDao userDao = DaoFactory.createDao(User.class);
+        HttpSession session = req.getSession();
+
+        List<User> userToSend = userDao.getByPropertyEqual("userName", (String) session.getAttribute("userName"));
+        req.setAttribute("user", userToSend.get(0));
+        logger.debug(userToSend.get(0));
+
+        RequestDispatcher dispatcher = req.getRequestDispatcher("/viewProfile.jsp");
         dispatcher.forward(req, resp);
     }
 }
