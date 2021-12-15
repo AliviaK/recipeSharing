@@ -121,9 +121,8 @@ public class RecipeStep implements Serializable {
     public String toString() {
         return "RecipeStep{" +
                 "id=" + id +
-                ", order number=" + orderNumber +
-                ", direction='" + direction + '\'' +
-                ", recipe=" + recipe +
+                ", order number= " + orderNumber +
+                ", direction= '" + direction + '\'' +
                 '}';
     }
 
@@ -132,11 +131,11 @@ public class RecipeStep implements Serializable {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         RecipeStep that = (RecipeStep) o;
-        return id == that.id && orderNumber == that.orderNumber && Objects.equals(direction, that.direction) && Objects.equals(recipe, that.recipe);
+        return id == that.id && orderNumber == that.orderNumber && direction.equals(that.direction);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, orderNumber, direction, recipe);
+        return Objects.hash(id, orderNumber, direction);
     }
 }

@@ -23,7 +23,7 @@
                 </td>
                 <td>
                     <c:forEach var="step" items="${recipe.recipeSteps}">
-                        ${step.orderNumber}. ${step.direction};
+                        ${step.orderNumber}. ${step.direction}
                     </c:forEach>
                 </td>
             </tr>

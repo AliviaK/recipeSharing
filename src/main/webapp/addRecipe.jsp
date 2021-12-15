@@ -1,17 +1,17 @@
 <%@include file="head.jsp"%>
 
-<header>
+<header class="text-center">
     <h1>Add a New Recipe</h1>
 </header>
 
-<form action="addRecipe" class="w-75 mx-auto">
+<form method="post" action="add-recipe" class="w-75 mx-auto">
     <div class="row m-3 align-items-center">
         <div class="form-group col-6">
             <label for="name">Recipe Name: </label>
             <input type="text" class="form-control" id="name" name="name" class="name" placeholder="Recipe Name">
         </div>
         <div class="form-check col-6">
-            <input class="form-check-input" type="checkbox" value="" id="isPublic" checked>
+            <input class="form-check-input" type="checkbox" name="isPublic" id="isPublic" checked>
             <label class="form-check-label" for="isPublic">This is a Public Recipe </label>
         </div>
         <div class="form-group col-12">
@@ -24,11 +24,11 @@
     <div class="row m-3" id="addIngredientDiv">
         <div class="form-group col-6">
             <label for="ingredient0">Ingredient: </label>
-            <input type="text" class="form-control" id="ingredient0" name="recipeIngredient" placeholder="Ingredient Name">
+            <input type="text" class="form-control" id="ingredient0" name="ingredient[]" placeholder="Ingredient Name">
         </div>
         <div class="form-group col-6">
             <label for="quantity0">Quantity: </label>
-            <input type="text" class="form-control" id="quantity0" name="ingredientQuantity" placeholder="ex. 1/4 tsp">
+            <input type="text" class="form-control" id="quantity0" name="quantity[]" placeholder="ex. 1/4 tsp">
         </div>
     </div>
 
@@ -40,12 +40,12 @@
 
     <div class="row m-3" id="addStepDiv">
         <div class="form-group col-sm-1">
-            <label for="quantity0">Order #: </label>
-            <input type="text" class="form-control" id="order0" name="stepOrder">
+            <label for="order0">Step #: </label>
+            <input type="text" class="form-control" id="order0" name="order[]"  value="1">
         </div>
         <div class="form-group col-sm-11">
-            <label for="ingredient0">Step: </label>
-            <input type="text" class="form-control" id="step0" name="recipeStep" maxlength="100">
+            <label for="direction0">Directions: </label>
+            <textarea class="form-control" id="direction0" name="direction[]" rows="2" maxlength="400"></textarea>
         </div>
     </div>
 
@@ -55,9 +55,12 @@
         </div>
 
         <div class="col-12 p-2 mt-2">
-            <button class="purpleButton text-white font-weight-bold mt-1" type="submit" id="createRecipe" value="createRecipe">Add new recipe</button>
+            <button class="submitButton font-weight-bold mt-1" type="submit" id="createRecipe" value="createRecipe">Add new recipe</button>
         </div>
     </div>
 </form>
+
+<p>${confirmation}</p>
+<c:remove var="confirmation" scope="session" />
 
 <%@include file="footer.jsp"%>

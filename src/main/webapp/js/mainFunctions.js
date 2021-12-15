@@ -25,8 +25,8 @@ const processAddIngredientClick = () => {
 
     /* Create div for ingredient */
     let ingredientTypeDiv = document.createElement('div');
-    ingredientTypeDiv.setAttribute("id", "ingredientTypeDiv" + ingredienti);
     ingredientTypeDiv.setAttribute("class", "form-group col-6");
+    ingredientTypeDiv.setAttribute("id", "ingredientTypeDiv" + ingredienti);
 
     /** Create Ingredient label */
     let labelForIngredient = document.createElement('label');
@@ -36,26 +36,26 @@ const processAddIngredientClick = () => {
     /** Create Ingredient input */
     let ingredientInput = document.createElement('input');
     ingredientInput.setAttribute("type", "text");
-    ingredientInput.setAttribute("id", "ingredient" + ingredienti);
-    ingredientInput.setAttribute("name", "ingredient");
     ingredientInput.setAttribute("class", "form-control");
+    ingredientInput.setAttribute("id", "ingredient" + ingredienti);
+    ingredientInput.setAttribute("name", "ingredient[]");
 
     /* Create div for amount */
     let amountDiv = document.createElement('div');
-    amountDiv.setAttribute("id", "amountDiv" + ingredienti);
     amountDiv.setAttribute("class", "form-group col-6");
+    amountDiv.setAttribute("id", "amountDiv" + ingredienti);
 
     /** Create Amount label */
     let labelForAmount = document.createElement('label');
-    labelForAmount.setAttribute("for", "amount" + ingredienti);
+    labelForAmount.setAttribute("for", "quantity" + ingredienti);
     labelForAmount.innerText = "Quantity:";
 
     /** Create Amount input */
     let amountInput = document.createElement('input');
     amountInput.setAttribute("type", "text");
-    amountInput.setAttribute("id", "amount" + ingredienti);
-    amountInput.setAttribute("name", "amount");
     amountInput.setAttribute("class", "form-control");
+    amountInput.setAttribute("id", "quantity" + ingredienti);
+    amountInput.setAttribute("name", "quantity[]");
 
     /** Add ingredient elements to form */
     document.getElementById("addIngredientDiv").appendChild(ingredientTypeDiv);
@@ -76,8 +76,8 @@ const processAddIngredientClick = () => {
 const processAddStepClick = () => {
     /** Create div to store order input and label */
     let orderDiv = document.createElement('div');
-    orderDiv.setAttribute("id", "orderDiv" + stepi);
     orderDiv.setAttribute("class", "form-group col-1");
+    orderDiv.setAttribute("id", "orderDiv" + stepi);
 
     /** Create Order label */
     let labelForOrder = document.createElement('label');
@@ -87,14 +87,15 @@ const processAddStepClick = () => {
     /** Create Order input */
     let orderInput = document.createElement('input');
     orderInput.setAttribute("type", "text");
-    orderInput.setAttribute("id", "orderNumber" + stepi);
-    orderInput.setAttribute("name", "orderNumber");
     orderInput.setAttribute("class", "form-control");
+    orderInput.setAttribute("id", "order" + stepi);
+    orderInput.setAttribute("name", "order[]");
+    orderInput.setAttribute("value", '' + (stepi + 1) + '');
 
     /** Create div to store direction input and label */
     let stepDiv = document.createElement('div');
-    stepDiv.setAttribute("id", "stepDiv" + stepi);
     stepDiv.setAttribute("class", "form-group col-11");
+    stepDiv.setAttribute("id", "stepDiv" + stepi);
 
     /** Create Direction label */
     let labelForDirection = document.createElement('label');
@@ -102,11 +103,12 @@ const processAddStepClick = () => {
     labelForDirection.innerText = "Step:";
 
     /** Create Direction input */
-    let directionInput = document.createElement('input');
-    directionInput.setAttribute("type", "text");
-    directionInput.setAttribute("id", "direction" + stepi);
-    directionInput.setAttribute("name", "direction");
+    let directionInput = document.createElement('textarea');
     directionInput.setAttribute("class", "form-control");
+    directionInput.setAttribute("id", "direction" + stepi);
+    directionInput.setAttribute("name", "direction[]");
+    directionInput.setAttribute("rows", "2");
+    directionInput.setAttribute("maxlength", "400");
 
     /** Add order elements to form */
     document.getElementById("addStepDiv").appendChild(orderDiv);

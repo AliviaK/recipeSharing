@@ -66,7 +66,7 @@ class RecipeIngredientDaoTest {
         GenericDao recipeDao = new GenericDao(Recipe.class);
         Recipe recipe = (Recipe) recipeDao.getById(2);
 
-        RecipeIngredient recipeIngredientToAdd = new RecipeIngredient(recipe, "Honey");
+        RecipeIngredient recipeIngredientToAdd = new RecipeIngredient(recipe, "Honey", "2 cups");
         recipe.addRecipeIngredient(recipeIngredientToAdd);
 
         int id = genericDao.insert(recipeIngredientToAdd);

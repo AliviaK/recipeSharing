@@ -5,20 +5,20 @@
 </header>
 
 <div class="row">
-    <h2 class="col-12">Recipes</h2>
+    <h3 class="col-12">My Recipes</h3>
     <ul class="col-12">
-        <li>Recipe #1</li>
-        <li>Recipe #2</li>
-        <li>Recipe #3</li>
+        <c:forEach var="recipe" items="${user.recipes}">
+            <li>${recipe.id} ${recipe.name}</li>
+        </c:forEach>
     </ul>
 </div>
 
 <div class="row">
-    <h3 class="col-12">Parties</h3>
+    <h3 class="col-12">My Hosted Parties</h3>
     <ul class="col-12">
-        <li>Party #1</li>
-        <li>Party #2</li>
-        <li>Party #3</li>
+        <c:forEach var="party" items="${user.partiesHosting}">
+            <li>${party.id} ${party.details}</li>
+        </c:forEach>
     </ul>
 </div>
 

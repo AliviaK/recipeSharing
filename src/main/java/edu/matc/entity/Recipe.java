@@ -270,19 +270,18 @@ public class Recipe implements Serializable {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Recipe recipe = (Recipe) o;
-        return id == recipe.id && isPublic == recipe.isPublic && Objects.equals(user, recipe.user) && Objects.equals(name, recipe.name) && Objects.equals(notes, recipe.notes) && Objects.equals(recipeIngredients, recipe.recipeIngredients) && Objects.equals(recipeSteps, recipe.recipeSteps) && Objects.equals(parties, recipe.parties);
+        return id == recipe.id && isPublic == recipe.isPublic && name.equals(recipe.name) && Objects.equals(notes, recipe.notes);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, user, name, notes, isPublic);
+        return Objects.hash(id, name, notes, isPublic);
     }
 
     @Override
     public String toString() {
         return "Recipe{" +
                 "id=" + id +
-                ", user='" + user + '\'' +
                 ", name='" + name + '\'' +
                 ", notes='" + notes + '\'' +
                 ", isPublic=" + isPublic +
