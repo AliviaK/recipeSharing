@@ -68,7 +68,8 @@ public class PartyDaoTest {
         GenericDao recipeDao = new GenericDao(Recipe.class);
         User user = (User) userDao.getById(5);
         Recipe recipe = (Recipe) recipeDao.getById(3);
-        LocalDateTime date = LocalDateTime.of(2020, 04, 20, 20, 12);
+        // LocalDateTime date = LocalDateTime.of(2020, 04, 20, 20, 12);
+        LocalDateTime date = LocalDateTime.now();
 
         Party partyToAdd = new Party(user, recipe, date, "Baking muffins");
         user.addParty(partyToAdd);
@@ -86,7 +87,7 @@ public class PartyDaoTest {
 
     }
 
-    /** TODO Delete user
+    /**
     @Test
     void deleteSuccess() {
         genericDao.delete(genericDao.getById(1));

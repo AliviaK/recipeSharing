@@ -15,7 +15,25 @@ body {
     background-color: #685162;
 }
 
-.purpleButton:active {
-    background-color: #B490AA;
+.blueButton:active {
+    background-color: #E499AA;
     box-shadow: 2px 3px 5px #3F323B;
+}
+
+.blueButton {
+    background-color: #ceb1c2;
+    box-shadow: 2px 3px 5px #3F323B;
+}
+
+.blueButton:hover {
+    background-color: #d782ab;
+}
+
+.blueButton:active {
+    background-color: #B490AA;
+    box-shadow: 2px 3px 5px #01323B;
+}
+
+ul {
+    list-style-type: none;
 }

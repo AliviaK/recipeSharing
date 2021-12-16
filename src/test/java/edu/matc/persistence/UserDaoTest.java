@@ -4,6 +4,7 @@ import edu.matc.entity.Party;
 import edu.matc.entity.Recipe;
 import edu.matc.entity.User;
 import edu.matc.test.util.Database;
+import edu.matc.util.DaoFactory;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -14,14 +15,14 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class UserDaoTest {
 
-    GenericDao genericDao;
+    GenericDao userDao;
 
     @BeforeEach
     void setUp() {
         Database database = Database.getInstance();
         database.runSQL("cleandb.sql");
 
-        genericDao = new GenericDao(User.class);
+        userDao = DaoFactory.createDao(User.class);
     }
 
     /**
@@ -29,7 +30,7 @@ class UserDaoTest {
      */
     @Test
     void getByIdSuccess() {
-        User retrievedUser = (User) genericDao.getById(4);
+        User retrievedUser = (User) userDao.getById(4);
         assertNotNull(retrievedUser);
         assertEquals("Abed", retrievedUser.getFirstName());
     }
@@ -39,7 +40,7 @@ class UserDaoTest {
      */
     @Test
     void getAllSuccess() {
-        List<User> users = genericDao.getAll();
+        List<User> users = userDao.getAll();
         assertEquals(6, users.size());
     }
 
@@ -48,7 +49,7 @@ class UserDaoTest {
      */
     @Test
     void getByPropertyLikeLastNameSuccess() {
-        List<User> users = genericDao.getByPropertyLike("lastName", "ben", "User");
+        List<User> users = userDao.getByPropertyLike("lastName", "ben", "User");
         assertEquals(1, users.size());
     }
 
@@ -57,35 +58,35 @@ class UserDaoTest {
      */
     @Test
     void getByPropertyLikeUserNameSuccess() {
-        List<User> users = genericDao.getByPropertyLike("userName", "jwing");
+        List<User> users = userDao.getByPropertyLike("userName", "jwing");
         assertEquals(1, users.size());
     }
 
     @Test
     void saveOrUpdateSuccess() {
         String newLastName = "Starburns";
-        User userToUpdate = (User) genericDao.getById(3);
+        User userToUpdate = (User) userDao.getById(3);
         userToUpdate.setLastName(newLastName);
-        genericDao.saveOrUpdate(userToUpdate);
-        User retrievedUser = (User) genericDao.getById(3);
+        userDao.saveOrUpdate(userToUpdate);
+        User retrievedUser = (User) userDao.getById(3);
         assertEquals(userToUpdate, retrievedUser);
     }
 
     @Test
     void insertSuccess() {
         User userToAdd = new User("Pierce", "Hawthorne","phawthore", "phawthorne@greendalecollege.edu");
-        int id = genericDao.insert(userToAdd);
+        int id = userDao.insert(userToAdd);
         assertNotEquals(0, id);
-        User insertedUser = (User) genericDao.getById(id);
+        User insertedUser = (User) userDao.getById(id);
         assertEquals(userToAdd, insertedUser);
     }
 
     @Test
     void insertWithEmailUsernameSuccess() {
         User userToAdd = new User("TrinketAndBella", "tandb@greendalecollege.edu");
-        int id = genericDao.insert(userToAdd);
+        int id = userDao.insert(userToAdd);
         assertNotEquals(0, id);
-        User insertedUser = (User) genericDao.getById(id);
+        User insertedUser = (User) userDao.getById(id);
         System.out.println(insertedUser);
         assertEquals(userToAdd, insertedUser);
     }
@@ -100,10 +101,10 @@ class UserDaoTest {
 
         userToAdd.addRecipe(recipe);
 
-        int id = genericDao.insert(userToAdd);
+        int id = userDao.insert(userToAdd);
 
         assertNotEquals(0, id);
-        User insertedUser = (User) genericDao.getById(id);
+        User insertedUser = (User) userDao.getById(id);
         assertEquals(1, insertedUser.getRecipes().size());
     }
 
@@ -114,8 +115,9 @@ class UserDaoTest {
     /** Consider how to delete data w/cascades. DELETE ALL RECIPES? OR MAKE ID NULLABLE?
     @Test
     void deleteSuccess() {
-        genericDao.delete(genericDao.getById(1));
-        assertNull(genericDao.getById(1));
+
+        userDao.delete(userDao.getById(1));
+        assertNull(userDao.getById(1));
     }
-    */
+     */
 }

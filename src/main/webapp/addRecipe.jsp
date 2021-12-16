@@ -11,7 +11,7 @@
             <input type="text" class="form-control" id="name" name="name" class="name" placeholder="Recipe Name">
         </div>
         <div class="form-check col-6">
-            <input class="form-check-input" type="checkbox" name="isPublic" id="isPublic" checked>
+            <input class="form-check-input" type="checkbox" name="isPublic" id="isPublic">
             <label class="form-check-label" for="isPublic">This is a Public Recipe </label>
         </div>
         <div class="form-group col-12">
@@ -55,7 +55,7 @@
         </div>
 
         <div class="col-12 p-2 mt-2">
-            <button class="submitButton font-weight-bold mt-1" type="submit" id="createRecipe" value="createRecipe">Add new recipe</button>
+            <button class="blueButton mt-1" type="submit" id="createRecipe" value="createRecipe">Add new recipe</button>
         </div>
     </div>
 </form>

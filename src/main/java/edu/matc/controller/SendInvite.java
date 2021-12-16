@@ -9,14 +9,14 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 /**
- * The AddRecipeForm is a servlet that forwards to the add recipe jsp displaying a message of successful recipe addition
+ * Routes back to viewParties with confirmation message that email was sent
  * @author Alivia Kleinfeldt
  */
 @WebServlet(
-        name = "add-form",
-        urlPatterns = { "/add-form" }
+        name = "send-invite",
+        urlPatterns = { "/send-invite" }
 )
-public class AddRecipeForm extends HttpServlet {
+public class SendInvite extends HttpServlet {
 
     /**
      *  Handles HTTP GET requests.

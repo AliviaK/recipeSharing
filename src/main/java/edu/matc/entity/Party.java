@@ -21,7 +21,7 @@ public class Party implements Serializable {
     private int id;
 
     // Rename user to host?
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.EAGER)
     private User user;
 
     @ManyToOne
@@ -36,6 +36,20 @@ public class Party implements Serializable {
      * Instantiates a new Party.
      */
     public Party() {
+    }
+
+    /**
+     * Instantiates a new Party without date set
+     *
+     * @param user      the user
+     * @param recipe    the recipe
+     * @param details   the details
+     */
+    public Party(User user, Recipe recipe, String details) {
+        this.user = user;
+        this.recipe = recipe;
+        this.partyDate = LocalDateTime.now();
+        this.details = details;
     }
 
     /**

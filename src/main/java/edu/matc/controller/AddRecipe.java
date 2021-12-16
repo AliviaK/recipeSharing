@@ -19,7 +19,7 @@ import java.io.IOException;
 import java.util.List;
 
 /**
- * The type Add recipe.
+ * The type Add recipe which adds inserted recipe into database and adds to user, then is sent back to homepage
  */
 @WebServlet(
         name = "add-recipe",
@@ -50,8 +50,7 @@ public class AddRecipe extends HttpServlet {
         Recipe recipe = setRecipeDetails(req, session);
 
         String message = "recipe " + recipe.getName() + " added";
-
-        session.setAttribute("confirmation", message);
+        logger.info(message);
 
         String url = "add-form";
         resp.sendRedirect(url);

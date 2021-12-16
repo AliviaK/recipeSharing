@@ -51,12 +51,10 @@
                             </li>
                         </c:when>
                         <c:otherwise>
-                            <li>Welcome ${userName}</li>
                             <li class="nav-item">
-                                <a href="viewProfile" class="nav-link link-dark m-2 fw-bold">Profile</a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="viewParties.jsp" class="nav-link link-dark m-2 fw-bold">View My Parties</a>
+                                <a href="viewProfile" class="nav-link link-dark m-2 fw-bold">
+                                    View ${userName}&#39;s Profile
+                                </a>
                             </li>
                             <li class="nav-item">
                                 <a href="addRecipe.jsp" class="nav-link link-dark m-2 fw-bold">Add Recipe</a>
