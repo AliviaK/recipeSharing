@@ -10,9 +10,7 @@ make new friends through their favorite activity. Others yet are casual bakers a
 excuse to give a new recipe a try.
 
 There are some recipe sharing apps in existence where users can share reviews, but few allow direct and 
-private sharing among parties. These apps that have private sharing cost a premium. There is no app out there that not 
-only allows for the input, sharing, and reviewing of recipes, but also turns cooking and baking into a social 
-media where we can connect with friends and family, old and new.
+private sharing among parties. These apps that have private sharing cost a premium.
 
 Recipes Among Friends is looking to change this. Parties may be hosted, in which the host invites friends, uploads a 
 recipe for the group to try, picks a date or time frame, and the party reconvenes later to share reviews. Don’t 

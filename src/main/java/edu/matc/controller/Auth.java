@@ -53,7 +53,6 @@ import edu.matc.auth.*;
 @WebServlet(
         urlPatterns = {"/auth"}
 )
-// TODO if something goes wrong it this process, route to an error page. Currently, errors are only caught and logged.
 /**
  * Inspired by: https://stackoverflow.com/questions/52144721/how-to-get-access-token-using-client-credentials-using-java-code
  */
@@ -94,7 +93,6 @@ public class Auth extends HttpServlet implements PropertiesLoader {
         HttpSession session = req.getSession();
 
         if (authCode == null) {
-            //TODO forward to an error page or back to the login
         } else {
             HttpRequest authRequest = buildAuthRequest(authCode);
             try {
@@ -106,10 +104,8 @@ public class Auth extends HttpServlet implements PropertiesLoader {
                 session.setAttribute("userSesh", loggedInUser);
             } catch (IOException e) {
                 logger.error("Error getting or validating the token: " + e.getMessage(), e);
-                //TODO forward to an error page
             } catch (InterruptedException e) {
                 logger.error("Error getting token from Cognito oauth url " + e.getMessage(), e);
-                //TODO forward to an error page
             }
         }
         RequestDispatcher dispatcher = req.getRequestDispatcher("index.jsp");
@@ -267,7 +263,6 @@ public class Auth extends HttpServlet implements PropertiesLoader {
      * Read in the cognito props file and get/set the client id, secret, and required urls
      * for authenticating a user.
      */
-    // TODO This code appears in a couple classes, consider using a startup servlet similar to adv java project
     private void loadProperties() {
         try {
             properties = loadProperties("/cognito.properties");
