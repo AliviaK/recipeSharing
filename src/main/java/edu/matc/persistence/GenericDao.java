@@ -13,7 +13,7 @@ import javax.persistence.criteria.Root;
 import java.util.List;
 
 /**
- * Generic DAO
+ * Generic DAO for database access
  */
 public class GenericDao<T> {
     private Class<T> type;

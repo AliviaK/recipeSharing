@@ -40,10 +40,10 @@ dishes.
 + As a user, I want to send invites to my friends so they can join my cooking party. *
 
 ## Review Recipes
-+ As a user, I want to write a review of my friend's recipe so I can share my opinions. *
++ As a user, I want to write a review of my friend's recipe so I can share my opinions. 
 + As a user, I want to upload a photo of my finished recipe so I can show my final product. 
-+ As a user, I want to edit my review so it can more accurately reflect my opinion. *
-+ As a user, I want to delete my review so I can keep my opinion private if I change my mind. *
++ As a user, I want to edit my review so it can more accurately reflect my opinion. 
++ As a user, I want to delete my review so I can keep my opinion private if I change my mind. 
 + As a user, I want to write review of public recipes so I can share my opinion on recipes I find.
 + As a user, I want to rate recipes so I can share my opinion without writing a review.
 
