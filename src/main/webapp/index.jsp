@@ -1,7 +1,7 @@
 <%@include file="head.jsp"%>
 
 <header>
-    <h1>Popular Recipes: </h1>
+    <h1>Search Public Recipes: </h1>
 </header>
 
 <form method="get" action="searchRecipe" class="form-inline">
@@ -12,10 +12,7 @@
         </div>
         <div class="col">
             <button class="purpleButton btn text-white font-weight-bold me-1" type="submit" name="submit" value="searchRecipe">Search by Recipe Name</button>
-            <button class="purpleButton btn text-white font-weight-bold" type="submit" name="submit" value="searchAll">Search All Recipes</button>
-        </div>
-        <div>
-
+            <button class="blueButton btn font-weight-bold" type="submit" name="submit" value="searchAll">Search All Recipes</button>
         </div>
     </div>
 </form>

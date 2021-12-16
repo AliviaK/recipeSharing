@@ -3,28 +3,25 @@
 </h3>
 
 <div class="row">
-    <table class="table">
+    <table class="table p-2">
         <thead>
         <th>Name</th>
-        <th>Ingredients</th>
-        <th>Directions</th>
+        <th>Author</th>
         </thead>
         <tbody>
-        <c:forEach var="recipe" items="${recipes}">
-            <tr>
-                <td>${recipe.name}</td>
-                <td>
-                    <c:forEach var="ingredient" items="${recipe.recipeIngredients}">
-                        ${ingredient.amount} ${ingredient.ingredient}
-                    </c:forEach>
-                </td>
-                <td>
-                    <c:forEach var="step" items="${recipe.recipeSteps}">
-                        ${step.orderNumber}. ${step.direction}
-                    </c:forEach>
-                </td>
-            </tr>
-        </c:forEach>
+        <form action="/display-recipe-details" method="get">
+            <c:forEach var="recipe" items="${recipes}">
+                <tr>
+                    <td>
+                           <button type="submit" class="purpleButton text-white" name="submit" value="${recipe.name}">
+                                   ${recipe.name} </button>
+                    </td>
+                    <td>
+                        ${recipe.user.userName}
+                    </td>
+                </tr>
+            </c:forEach>
+        </form>
         </tbody>
     </table>
 </div>

@@ -68,6 +68,7 @@ public class Auth extends HttpServlet implements PropertiesLoader {
     String REGION;
     String POOL_ID;
     Keys jwks;
+    GenericDao userDao;
 
     private final Logger logger = LogManager.getLogger(this.getClass());
 
@@ -87,6 +88,7 @@ public class Auth extends HttpServlet implements PropertiesLoader {
      */
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        userDao = DaoFactory.createDao(User.class);
         String authCode = req.getParameter("code");
         String userName = null;
         HttpSession session = req.getSession();
@@ -100,6 +102,8 @@ public class Auth extends HttpServlet implements PropertiesLoader {
                 userName = validate(tokenResponse);
                 req.setAttribute("userName", userName);
                 session.setAttribute("userName", userName);
+                User loggedInUser = (User) userDao.getByPropertyEqual("userName", userName).get(0);
+                session.setAttribute("userSesh", loggedInUser);
             } catch (IOException e) {
                 logger.error("Error getting or validating the token: " + e.getMessage(), e);
                 //TODO forward to an error page
@@ -157,7 +161,6 @@ public class Auth extends HttpServlet implements PropertiesLoader {
         BigInteger modulus = new BigInteger(1, org.apache.commons.codec.binary.Base64.decodeBase64(jwks.getKeys().get(0).getN()));
         BigInteger exponent = new BigInteger(1, org.apache.commons.codec.binary.Base64.decodeBase64(jwks.getKeys().get(0).getE()));
 
-        // TODO the following is "happy path", what if the exceptions are caught?
         // Create a public key
         PublicKey publicKey = null;
         try {

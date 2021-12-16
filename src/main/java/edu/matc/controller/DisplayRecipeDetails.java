@@ -1,7 +1,6 @@
 package edu.matc.controller;
 
-
-import edu.matc.entity.User;
+import edu.matc.entity.Recipe;
 import edu.matc.persistence.GenericDao;
 import edu.matc.util.DaoFactory;
 import org.apache.logging.log4j.LogManager;
@@ -13,30 +12,27 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.util.List;
 
 /**
- * The type View profile which loads user from session and forwards to jsp to view profile
+ * The type Display recipe details which retrieves a recipe and forwards the recipe to a jsp for viewing of its details
  */
 @WebServlet(
-        urlPatterns = {"/viewProfile"}
+        urlPatterns = {"/display-recipe-details"}
 )
-public class ViewProfile extends HttpServlet {
+public class DisplayRecipeDetails extends HttpServlet {
     private final Logger logger = LogManager.getLogger(this.getClass());
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        GenericDao userDao = DaoFactory.createDao(User.class);
-        HttpSession session = req.getSession();
+        GenericDao recipeDao = DaoFactory.createDao(Recipe.class);
 
-        List<User> userToSend = userDao.getByPropertyEqual("userName",
-                (String) session.getAttribute("userName"));
-        req.setAttribute("user", userToSend.get(0));
-        logger.debug(userToSend.get(0));
+        List<Recipe> recipeList = recipeDao.getByPropertyLike("name", req.getParameter("submit"));
+        logger.info("recipe list: " + recipeList);
+        req.setAttribute("recipe", recipeList.get(0));
 
-        RequestDispatcher dispatcher = req.getRequestDispatcher("/viewProfile.jsp");
+        RequestDispatcher dispatcher = req.getRequestDispatcher("/displayRecipe.jsp");
         dispatcher.forward(req, resp);
     }
 }

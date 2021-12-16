@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 /**
- * The AddRecipeForm is a servlet that forwards to the add recipe jsp displaying a message of successful recipe addition
+ * Routes back to viewParties with confirmation message that email was sent
  * @author Alivia Kleinfeldt
  */
 @WebServlet(
@@ -28,8 +28,7 @@ public class SendInvite extends HttpServlet {
      */
     public void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        String url = "/viewParties.jsp";
-
+        String url = "/index.jsp";
 
         RequestDispatcher dispatcher = getServletContext().
                 getRequestDispatcher(url);

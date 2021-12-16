@@ -14,14 +14,12 @@ import javax.servlet.annotation.*;
 import java.io.IOException;
 
 /**
- * A simple servlet to welcome the user.
- * @author pwaite
+ * Admin search capability of users and recipes
  */
 
 @WebServlet(
         urlPatterns = {"/searchUser"}
 )
-
 public class SearchUser extends HttpServlet {
     private final Logger logger = LogManager.getLogger(this.getClass());
 
@@ -29,7 +27,9 @@ public class SearchUser extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         GenericDao userDao = new GenericDao(User.class);
         if (req.getParameter("submit").equals("searchUsername")) {
-            req.setAttribute("users", userDao.getByPropertyLike("userName", req.getParameter("searchTerm"), "User"));
+            req.setAttribute("users", userDao.getByPropertyLike("userName",
+                    req.getParameter("searchTerm"), "User"));
+
             logger.debug(req.getParameter("userName"));
         } else {
             req.setAttribute("users", userDao.getAll());

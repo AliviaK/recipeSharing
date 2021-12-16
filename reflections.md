@@ -205,7 +205,7 @@ several methods for annotating the PartyUsers, but it's lead to me needing to th
 to be capable of.
 
 ## Week 13
-### Week of 11/22
+### Week of 11/22: 7 hrs
 
 Tasks Accomplished:
 + Solve UserDao test failures
@@ -222,7 +222,7 @@ I created issues on GitHub addressing points I want and need to solve to complet
 to address and close these issues.
 
 ## Week 14
-### Week of 11/29
+### Week of 11/29: 6 hrs
 
 Tasks Accomplished: 
 + Complete Peer Review 2
@@ -245,7 +245,7 @@ I kept running into an issue of gmail rejecting my email or saying it was a secu
 apps to access the gmail account I created for my site. 
 
 ## Week 15
-### Week of 12/5
+### Week of 12/5: 21 hrs
 
 Tasks Accomplished:
 + Catch up on reflections and MVP
@@ -259,7 +259,7 @@ form validation for recipe inputs, and spent time editing the database to allow 
 spent working with Hibernate to get to delete various objects and troubleshoot why I cannot.
 
 ## Week 16
-### Week of 12/12
+### Week of 12/12: 16 hrs
 
 Tasks Accomplished:
 + Complete Login/Logout
@@ -271,3 +271,15 @@ When connecting the doPost method for inserting recipes, I looked back on Advanc
 redirects and forwarding, which helped me for implementing JavaMail. I watched this tutorial video for assistance with
 JavaMail servlet: https://www.youtube.com/watch?v=gy2eEZhLihk
 This was necessary for sending an email: https://kinsta.com/blog/gmail-smtp-server/
+Completing this project was a real eye-opener for just how many small details go into a project, and how many days can
+be spent on those details that arise in twos when one is solved. I'd ended up falling short on the initial vision I'd
+had for this project, which I can see was very ambitious, but my biggest regret was not implementing full CRUD given the
+many, many hours I'd spent on the database trying to figure out the foreign key issues and how I want everything to 
+operate as a whole. I learned it's best to try instead of getting stuck in the planning phase, which was my biggest 
+blocker this semester. That and time I could commit. 
+
+My AWS database was no longer connecting for me locally midway through my working this week, so any testing I did have to
+come from deploying live to beanstalk, which really slowed down my workflow and prevented me from seeing the data easily.
+Ultimately, despite the roadblocks and not achieving full CRUD, the app I created ended up to serve as handy and runs 
+smoothly, and I can see many creative ways to branch off this as well as many areas to clean up which I intend to as I
+add to this project.
